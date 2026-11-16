@@ -1,6 +1,6 @@
 # Consulta temática libre — puente seguro v1
 
-**Fecha:** 16-11-2026 (Chile). **Estado:** función de análisis local, sin servicio de búsqueda en tiempo real.
+**Fecha:** 16-11-2026 (Chile). **Estado:** función local operativa en código y backend G2 temático **preparado pero NO desplegado**. No se ofrece búsqueda automática pública hasta verificar URL, secreto y controles de servidor. [Arquitectura del Worker](BACKEND_G2_TEMATICO_WORKER.md).
 
 ## Qué funciona hoy
 

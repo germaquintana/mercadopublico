@@ -137,6 +137,18 @@ function demoSolar(){
  $("topicInput").value="energía solar";$("fileInput").value="";$("pasteInput").value="";
  loadRecords(source,"muestra energética solar de 3 fichas secundarias (corte 16-11-2026)");
 }
+/* Inyección solo de resultados ya normalizados desde el backend verificado.
+ * No permite guardar ni transmitir datos de esta pantalla. */
+window.OBS_LOAD_LIVE_RECORDS=function(records,coverage){
+ if(!Array.isArray(records)||records.length>40)throw new Error("Respuesta API fuera de límites.");
+ const cleaned=records.filter(r=>r&&typeof r.id==="string"&&Array.isArray(r.sources));
+ if(cleaned.length!==records.length)throw new Error("Esquema del servicio no válido.");
+ if(!cleaned.length){state.records=[];state.subset=[];state.selected="";$("queryResults").hidden=true;setStatus("La API no encontró coincidencias en este período acotado; no significa que no existan licitaciones publicadas antes.","");}
+ else loadRecords(cleaned,"API oficial, consulta acotada de "+(coverage?.days_requested||0)+" día(s)");
+ const partial=coverage?.partial?" · Muestra parcialmente truncada":"";
+ const info="Cobertura: "+(coverage?.items_examined||0)+" procesos examinados en "+(coverage?.days_requested||0)+" día(s); no equivale a todos los procesos abiertos"+partial+".";
+ $("liveMeta").textContent=info;$("liveMeta").hidden=false;
+};
 function exportCsv(){
  if(!state.subset.length){setStatus("No hay resultados filtrados para exportar.","error");return;}
  const blob=new Blob([L.csv(state.subset)],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob);

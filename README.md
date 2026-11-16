@@ -5,6 +5,14 @@
 
 > GitHub Pages está habilitado; se verificaron los archivos y la navegación mediante una simulación de DOM, pero **el acceso HTTP al dominio publicado y la ejecución en navegador real no se pudieron comprobar desde el entorno de esta sesión**. La dirección no debe declararse validada como sitio vivo hasta obtener esa prueba.
 
+## Backend G2 temático: implementado, pendiente de despliegue
+
+Se creó un [Worker protegido](backend/src/worker.mjs) para consultar **de uno a tres días de publicaciones** de la API de Mercado Público, filtrar por tema, devolver hasta 40 fichas y registrar cobertura del período. Tiene [pruebas offline](backend/test/worker.test.mjs), validación Turnstile, limitación de frecuencia y [configuración de secretos](backend/wrangler.toml) separada del navegador.
+
+**No hay URL ni backend activo verificado.** La [pantalla de consulta](consulta.html) muestra el nuevo bloque, pero su botón permanece deshabilitado porque [`assets/service-config.js`](assets/service-config.js) tiene `endpoint: null`. Está diseñado así para impedir afirmaciones falsas y exposición del ticket. La interfaz de importación manual y los ejemplos continúan operativos. Para activar, se requieren Cloudflare Worker, Turnstile y sus dos secretos **configurados fuera de GitHub** y una prueba HTTP real. Véase [guía de despliegue y riesgos](docs/BACKEND_G2_TEMATICO_WORKER.md).
+
+**No se ejecutó ninguna consulta nueva autenticada.** Tampoco se autorizaron G3, G4 ni G5.
+
 ## Consulta temática para cualquier tema (nueva capacidad)
 
 [**Abrir consulta libre**](consulta.html): introduce una palabra o tema (por ejemplo, **energía solar**), abre el buscador avanzado oficial para reunir resultados y **carga un CSV o JSON acotado** para analizar hasta 100 licitaciones **sin enviar archivos ni credenciales**. Incluye una muestra real indexada de **3 procesos de energía solar**, un ejemplo de 6 licitaciones de IA y una plantilla de importación. No se realiza una consulta automática por palabra en la API; el conector autenticado sigue pendiente de autorización y backend. [Instrucciones](docs/CONSULTA_TEMATICA_V1.md).

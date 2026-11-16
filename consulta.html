@@ -11,6 +11,8 @@
 <script defer src="assets/import.js"></script>
 <script defer src="assets/solar.js"></script>
 <script defer src="assets/consulta.js"></script>
+<script defer src="assets/service-config.js"></script>
+<script defer src="assets/live.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#consulta">Saltar a consulta temática</a>
@@ -23,6 +25,13 @@
 </header>
 <main class="container query-main" id="consulta">
 <div class="notice"><span class="notice-icon" aria-hidden="true">i</span><div><strong>La búsqueda oficial y el análisis son dos pasos separados.</strong> Este sitio no consulta automáticamente la API ni obtiene resultados del portal. Abre el buscador oficial, reúne un extracto CSV/JSON y cárgalo aquí. El panorama describirá solamente ese extracto, no todo el mercado nacional.</div></div>
+<section class="surface live-panel" aria-labelledby="liveTitle">
+<div class="live-head"><div><span class="step-code">SERVICIO API · CONEXIÓN SEGURA</span><h2 id="liveTitle">Búsqueda automática en Mercado Público</h2><p class="help-text">El servidor consulta un máximo de 3 días de publicaciones y filtra el tema; no cubre todas las licitaciones abiertas ni el mercado nacional.</p></div><span id="liveBadge" class="microtag">No conectado</span></div>
+<div class="live-controls"><div class="filter-control"><label for="liveFrom">Desde (publicación)</label><input id="liveFrom" type="date"></div><div class="filter-control"><label for="liveTo">Hasta (publicación)</label><input id="liveTo" type="date"></div><div class="live-submit"><button id="liveRun" class="primary-button" type="button" disabled>Consultar API</button></div></div>
+<div id="liveWidget" class="live-widget" aria-label="Verificación antiabuso" hidden></div>
+<p id="liveServiceStatus" class="help-text" role="status" aria-live="polite">El servicio aún no está desplegado ni conectado. Mientras tanto puedes analizar los ejemplos o importar un CSV/JSON.</p>
+<p id="liveMeta" class="help-text" hidden></p>
+</section>
 <div class="query-step-grid">
 <section class="surface query-step" aria-labelledby="step1title">
 <span class="step-code">PASO 01 · CONSULTA</span><h2 id="step1title">Elige lo que quieres investigar</h2>

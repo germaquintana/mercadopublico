@@ -1,0 +1,26 @@
+name = "observatorio-mp-g2-tematico"
+main = "src/worker.mjs"
+compatibility_date = "2026-11-16"
+workers_dev = true
+
+# Sin cron, triggers ni historial persistente. Configurar Turnstile y secretos
+# en Cloudflare ANTES de activar la búsqueda desde la página pública.
+[observability]
+enabled = false
+
+[[ratelimits]]
+name = "CLIENT_LIMIT"
+namespace_id = "7161601"
+[ratelimits.simple]
+limit = 2
+period = 60
+
+[[ratelimits]]
+name = "UPSTREAM_LIMIT"
+namespace_id = "7161602"
+[ratelimits.simple]
+limit = 10
+period = 60
+
+[secrets]
+required = ["MERCADOPUBLICO_TICKET", "TURNSTILE_SECRET"]

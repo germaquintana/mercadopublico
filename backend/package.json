@@ -1,0 +1,9 @@
+{
+  "name": "observatorio-mp-g2-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {"node": ">=22"}
+}
