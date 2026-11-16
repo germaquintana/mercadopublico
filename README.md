@@ -1,12 +1,12 @@
 # Observatorio de Compras Públicas — piloto visual público
 
-> **Estado a 16-11-2026:** el código público de la interfaz está disponible en `index.html`. La URL GitHub Pages requiere habilitación en **Settings → Pages → Deploy from a branch → main → /(root) → Save**; el sitio **no debe declararse desplegado ni accesible hasta comprobar HTTP 200 y su contenido**.
+> **Estado a 16-11-2026:** el código público del visor está en `index.html` y **GitHub Pages figura habilitado** según metadatos de GitHub (`has_pages=true`, comprobación 16-11-2026). **No se ha podido verificar HTTP 200 ni ejecutar el visor desde el sitio en navegador remoto**; por tanto, la publicación operativa y su QA web permanecen pendientes de validación.
 
 ## Abrir el producto
 
 - Archivo público: [`index.html`](index.html).
-- URL de GitHub Pages **prevista, no verificada todavía**: `https://germaquintana.github.io/mercadopublico/`.
-- Configuración para habilitarlo: [Settings → Pages](https://github.com/germaquintana/mercadopublico/settings/pages) — seleccionar **Deploy from a branch**, rama `main`, carpeta `/(root)` y guardar. Posteriormente comprobar la URL en navegador.
+- URL del sitio de GitHub Pages (**habilitación confirmada, acceso HTTP no verificado**): https://germaquintana.github.io/mercadopublico/.
+- Configuración de Pages: [Settings → Pages](https://github.com/germaquintana/mercadopublico/settings/pages). Si la página no abre, revisar que el origen sea rama `main` y carpeta `/(root)` y consultar la ejecución del despliegue; no duplicar configuración.
 - No existe backend, servidor, token ni búsqueda nacional en esta edición. El HTML es autónomo.
 
 ## Qué muestra
@@ -40,6 +40,7 @@ El desarrollo técnico y las decisiones metodológicas permanecen bajo autoridad
 ## Historial técnico de esta publicación
 
 - **16-11-2026:** publicación inicial del MVP HTML en raíz desde código revisado del piloto, adaptado para enlaces exclusivamente públicos.
+- **16-11-2026 (seguimiento):** el titular habilitó Pages; los metadatos de GitHub corroboran `has_pages=true`, pero no se pudo obtener una respuesta HTTP desde el comprobador remoto. Verificación de compilación sintáctica del script y referencias DOM estática: OK. La prueba E2E sigue pendiente.
 - Controles estáticos: verificar códigos, montos, pestañas, exportación CSV, ausencia de credenciales y enlaces a repositorios privados.
-- **Pendiente:** prueba funcional en navegador y activación / verificación de GitHub Pages.
+- **Habilitación de Pages confirmada por metadatos; pendiente:** HTTP 200 y prueba funcional de pestañas, filtros y CSV desde el sitio real.
 - Ningún dato publicado acredita pagos, precios contractuales curados ni totalidad de órdenes vinculadas.
