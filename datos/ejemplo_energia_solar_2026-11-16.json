@@ -1,0 +1,139 @@
+{
+  "schema": "observatorio_muestra_tematica_energia_solar_v1",
+  "as_of_chile": "2026-11-16",
+  "source_note": "Tres fichas públicas secundarias de Calza; no consulta API nueva ni búsqueda nacional, estado/URLs oficiales sin apertura comprobada",
+  "records": [
+    {
+      "id": "5251-105-LP26",
+      "market": "consulta",
+      "type": "licitacion",
+      "title": "Tótems solares sustentables para universidades estatales",
+      "buyer": "Universidad Tecnológica Metropolitana",
+      "region": "Región Metropolitana",
+      "description": "Ingeniería, fabricación, suministro y transporte de 18 tótems solares con carga USB, iluminación LED y pantalla informativa. Utiliza energía solar para educación ambiental y servicios universitarios.",
+      "modality": "LP",
+      "category": "equipamiento_solar",
+      "topics": [
+        "energía solar",
+        "iluminación",
+        "universidades"
+      ],
+      "published_at": "2026-11-10",
+      "closing_at": "2026-11-30T15:30:00-03:00",
+      "closing_date_known": null,
+      "amount": {
+        "value": 154800005,
+        "currency": "CLP",
+        "kind": "presupuesto_estimado",
+        "tax": "sin_verificar",
+        "notes": "Monto estimado indexado por tercero, no adjudicado"
+      },
+      "reported_status": "Índice secundario señala 'abierta' al 16-11-2026; sin comprobación oficial de estado",
+      "fit": "Muestra del tema energía solar para ensayar filtros y análisis con procesos distintos.",
+      "source_quality": "ficha_secundaria_indexada_no_verificada_oficialmente",
+      "sources": [
+        {
+          "name": "Ruta por código al portal oficial; apertura no comprobada",
+          "url": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=5251-105-LP26",
+          "kind": "oficial"
+        },
+        {
+          "name": "Ficha secundaria Calza consultada 16-11-2026",
+          "url": "https://calza.cl/licitacion/5251-105-LP26",
+          "kind": "contraste"
+        }
+      ],
+      "source_note": "Ficha secundaria indexada consultada el 16-11-2026. El estado, los plazos y las bases originales requieren validación en Mercado Público.",
+      "related_orders": [],
+      "document_status": "Anexos, actas y bases originales no leídos"
+    },
+    {
+      "id": "1469-359-L126",
+      "market": "consulta",
+      "type": "licitacion",
+      "title": "Sistema fotovoltaico para módulo de agricultura vertical",
+      "buyer": "Universidad de Talca",
+      "region": "Región del Maule",
+      "description": "Adquisición e instalación de un sistema fotovoltaico de energía solar para el Módulo de Agricultura Vertical de la Universidad de Talca.",
+      "modality": "L",
+      "category": "instalacion_fotovoltaica",
+      "topics": [
+        "energía solar",
+        "fotovoltaico",
+        "universidad"
+      ],
+      "published_at": "2026-11-10",
+      "closing_at": "2026-11-17T17:15:00-03:00",
+      "closing_date_known": null,
+      "amount": {
+        "value": 7200000,
+        "currency": "CLP",
+        "kind": "presupuesto_estimado",
+        "tax": "sin_verificar",
+        "notes": "Monto estimado indexado por tercero, no adjudicado"
+      },
+      "reported_status": "Índice secundario señala 'abierta' al 16-11-2026; sin comprobación oficial de estado",
+      "fit": "Muestra del tema energía solar para ensayar filtros y análisis con procesos distintos.",
+      "source_quality": "ficha_secundaria_indexada_no_verificada_oficialmente",
+      "sources": [
+        {
+          "name": "Ruta por código al portal oficial; apertura no comprobada",
+          "url": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-359-L126",
+          "kind": "oficial"
+        },
+        {
+          "name": "Ficha secundaria Calza consultada 16-11-2026",
+          "url": "https://calza.cl/licitacion/1469-359-L126",
+          "kind": "contraste"
+        }
+      ],
+      "source_note": "Ficha secundaria indexada consultada el 16-11-2026. El estado, los plazos y las bases originales requieren validación en Mercado Público.",
+      "related_orders": [],
+      "document_status": "Anexos, actas y bases originales no leídos"
+    },
+    {
+      "id": "906816-24-B226",
+      "market": "consulta",
+      "type": "licitacion",
+      "title": "Construcción de postes solares de emergencia en Paposo",
+      "buyer": "I Municipalidad de Taltal",
+      "region": "Región de Antofagasta",
+      "description": "Construcción de postes solares de emergencia en la localidad de Paposo para iluminación residencial autónoma con energía solar.",
+      "modality": "B",
+      "category": "obra_solar",
+      "topics": [
+        "energía solar",
+        "iluminación pública",
+        "obras"
+      ],
+      "published_at": "2026-11-09",
+      "closing_at": "2026-11-30T15:00:00-03:00",
+      "closing_date_known": null,
+      "amount": {
+        "value": 75750557,
+        "currency": "CLP",
+        "kind": "presupuesto_estimado",
+        "tax": "sin_verificar",
+        "notes": "Monto estimado indexado por tercero, no adjudicado"
+      },
+      "reported_status": "Índice secundario señala 'abierta' al 16-11-2026; sin comprobación oficial de estado",
+      "fit": "Muestra del tema energía solar para ensayar filtros y análisis con procesos distintos.",
+      "source_quality": "ficha_secundaria_indexada_no_verificada_oficialmente",
+      "sources": [
+        {
+          "name": "Ruta por código al portal oficial; apertura no comprobada",
+          "url": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=906816-24-B226",
+          "kind": "oficial"
+        },
+        {
+          "name": "Ficha secundaria Calza consultada 16-11-2026",
+          "url": "https://calza.cl/licitacion/906816-24-B226",
+          "kind": "contraste"
+        }
+      ],
+      "source_note": "Ficha secundaria indexada consultada el 16-11-2026. El estado, los plazos y las bases originales requieren validación en Mercado Público.",
+      "related_orders": [],
+      "document_status": "Anexos, actas y bases originales no leídos"
+    }
+  ]
+}

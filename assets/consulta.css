@@ -1,0 +1,32 @@
+/* Consulta libre v1 — hereda el diseño del observatorio general */
+.query-header .query-hero{padding:46px 0 52px;max-width:850px}
+.query-hero h1{font-size:clamp(30px,4vw,49px);line-height:1.11;letter-spacing:-.04em;margin:13px 0 14px}
+.query-hero p{max-width:720px;color:#cadfe8;font-size:15px;line-height:1.65}
+.query-main{padding-top:30px!important}
+.query-step-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0}
+.query-step{padding:25px;min-height:325px}
+.step-code{display:block;color:#338293;font-size:11px;font-weight:810;letter-spacing:.12em;margin-bottom:8px}
+.query-step h2{font-size:21px;letter-spacing:-.02em;margin:5px 0 19px}
+.query-step label{display:block;color:#47667a;font-size:12px;font-weight:750;margin:12px 0 7px}
+.query-step input[type=search],.query-step input[type=file],.query-step textarea{width:100%;background:#fff;border:1px solid #c6d8e1;border-radius:9px;padding:12px;color:#193747;font-size:13px;min-height:45px}
+.query-step textarea{resize:vertical;min-height:74px}
+.query-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:16px 0}
+.query-primary-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border:1px solid var(--teal);border-radius:9px;font-size:12px;font-weight:760;background:var(--teal);color:#fff;text-decoration:none}
+.query-primary-link:hover{background:var(--teal-dark)}
+.help-text{font-size:12px;color:#6f8491;line-height:1.6;margin:10px 0}
+.message-line{background:#eef5f7;border-left:3px solid #83b4c1;color:#46677b;border-radius:4px;padding:14px 17px;margin:20px 0 29px;font-size:13px;font-weight:620}
+.message-line.error{background:#fff2ef;border-color:#d38375;color:#85473a}
+.message-line.success{background:#ecf7f0;border-color:#5da980;color:#32674e}
+.query-results{border-top:1px solid #d8e6ec;margin-top:34px;padding-top:40px}
+.query-graphs{margin-bottom:16px}
+.query-money{padding:22px;margin:0 0 20px}
+.query-money h3{margin:0 0 5px;font-size:17px}
+.query-money>p{font-size:12px;color:#71848f;margin:4px 0 18px}
+.query-money .money-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.query-money .money-item{border-bottom:0;border:1px solid #e1eaef;border-radius:10px;padding:13px;min-width:0}
+.query-money .money-item .money-val{font-size:18px;overflow-wrap:anywhere}
+.query-step [type=file]::file-selector-button{background:#eaf3f5;color:#245b6c;border:1px solid #d0e1e8;padding:8px 10px;border-radius:6px;font-weight:700;margin-right:12px}
+.query-detail-summary{font-size:12px;color:#577080;line-height:1.6}
+.query-detail-source{margin-top:15px}
+@media(max-width:900px){.query-step-grid{grid-template-columns:1fr}.query-money .money-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.query-step{padding:17px}.query-money .money-groups{grid-template-columns:1fr}.query-step .query-actions{display:grid}.query-step .query-actions>*{width:100%}.query-hero h1{font-size:30px}.query-results .actions{margin-top:13px}}

@@ -5,6 +5,10 @@
 
 > GitHub Pages está habilitado; se verificaron los archivos y la navegación mediante una simulación de DOM, pero **el acceso HTTP al dominio publicado y la ejecución en navegador real no se pudieron comprobar desde el entorno de esta sesión**. La dirección no debe declararse validada como sitio vivo hasta obtener esa prueba.
 
+## Consulta temática para cualquier tema (nueva capacidad)
+
+[**Abrir consulta libre**](consulta.html): introduce una palabra o tema (por ejemplo, **energía solar**), abre el buscador avanzado oficial para reunir resultados y **carga un CSV o JSON acotado** para analizar hasta 100 licitaciones **sin enviar archivos ni credenciales**. Incluye una muestra real indexada de **3 procesos de energía solar**, un ejemplo de 6 licitaciones de IA y una plantilla de importación. No se realiza una consulta automática por palabra en la API; el conector autenticado sigue pendiente de autorización y backend. [Instrucciones](docs/CONSULTA_TEMATICA_V1.md).
+
 ## ¿Qué se puede hacer?
 
 1. Seleccionar un mercado: **IA, pedagogía y TI** (6 licitaciones), **residuos peligrosos** (1 licitación + 2 OC), **arbolado y áreas verdes** (6 licitaciones) o **todos los ejemplos** (13 licitaciones, sin mezclas monetarias).

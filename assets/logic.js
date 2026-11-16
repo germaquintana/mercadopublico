@@ -10,7 +10,8 @@ const amountNames={
 presupuesto_estimado:"Presupuesto estimado (IVA por verificar)",
 presupuesto_disponible:"Presupuesto disponible (IVA incluido)",
 adjudicacion_neta:"Monto adjudicado neto",
-oc_total:"Total de orden de compra (IVA incluido)"
+oc_total:"Total de orden de compra (IVA incluido)",
+monto_reportado_sin_verificar:"Monto de archivo (naturaleza económica no verificada)"
 };
 const moneyTax={sin_verificar:"IVA sin verificar",incluido:"IVA incluido",no_incluido:"Neto",desconocido:"IVA por verificar"};
 function normalize(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}

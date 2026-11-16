@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Consulta temática de compras públicas: busca en el portal oficial, carga un extracto CSV o JSON y analiza hasta 100 licitaciones en tu navegador sin enviar datos.">
+<title>Consulta temática · Observatorio de Compras Públicas</title>
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/consulta.css">
+<script defer src="assets/catalog.js"></script>
+<script defer src="assets/logic.js"></script>
+<script defer src="assets/import.js"></script>
+<script defer src="assets/solar.js"></script>
+<script defer src="assets/consulta.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#consulta">Saltar a consulta temática</a>
+<header class="site-header query-header">
+<div class="container">
+ <div class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Observatorio <small>Compras Públicas</small></span></a>
+ <nav class="topnav"><a href="index.html">Panorama y ejemplos</a><a href="#consulta" aria-current="page">Consulta libre</a><a href="https://github.com/germaquintana/mercadopublico/blob/main/docs/CONSULTA_TEMATICA_V1.md" target="_blank" rel="noopener noreferrer">Método y ayuda</a></nav></div>
+ <div class="query-hero"><span class="eyebrow">BÚSQUEDA TEMÁTICA · VÍA SEGURA SIN TICKET</span><h1>Investiga cualquier tema sin limitarte a los ejemplos.</h1><p>Busca licitaciones en Mercado Público y analiza un conjunto acotado de resultados aquí. Las consultas y archivos quedan en tu navegador.</p></div>
+</div>
+</header>
+<main class="container query-main" id="consulta">
+<div class="notice"><span class="notice-icon" aria-hidden="true">i</span><div><strong>La búsqueda oficial y el análisis son dos pasos separados.</strong> Este sitio no consulta automáticamente la API ni obtiene resultados del portal. Abre el buscador oficial, reúne un extracto CSV/JSON y cárgalo aquí. El panorama describirá solamente ese extracto, no todo el mercado nacional.</div></div>
+<div class="query-step-grid">
+<section class="surface query-step" aria-labelledby="step1title">
+<span class="step-code">PASO 01 · CONSULTA</span><h2 id="step1title">Elige lo que quieres investigar</h2>
+<label for="topicInput">Tema, palabra clave o rubro</label><input id="topicInput" type="search" value="energía solar" placeholder="Ej.: energía solar, ciberseguridad, reciclaje">
+<div class="query-actions">
+<a id="officialSearch" class="query-primary-link" href="https://www.mercadopublico.cl/Portal/Modules/Site/Busquedas/BuscadorAvanzado.aspx?qs=1" target="_blank" rel="noopener noreferrer">Abrir buscador oficial ↗</a>
+<button id="copyTopic" class="secondary-button" type="button">Copiar término</button>
+</div>
+<p class="help-text">El enlace abre la búsqueda avanzada oficial. Ingresa allí el término copiado y revisa estado, fechas y filtros; no se prellenan campos mediante URL no documentada.</p>
+</section>
+<section class="surface query-step" aria-labelledby="step2title">
+<span class="step-code">PASO 02 · IMPORTACIÓN LOCAL</span><h2 id="step2title">Carga resultados para analizarlos</h2>
+<label for="fileInput">Archivo CSV o JSON (máximo 1 MB y 100 filas)</label><input id="fileInput" type="file" accept=".csv,.json,.txt,text/csv,application/json,text/plain">
+<p class="help-text">Si tienes filas copiadas de una tabla, también puedes pegarlas aquí. No se subirán a un servidor.</p>
+<label for="pasteInput">Pegar CSV o JSON (opcional)</label><textarea id="pasteInput" rows="3" placeholder="codigo;nombre;organismo;fecha_cierre;monto&#10;1234-56-LE26;Estudio de ejemplo;Organismo;14/12/2026;1000000"></textarea>
+<div class="query-actions"><button id="analyzeBtn" class="primary-button" type="button">Analizar selección</button><button id="solarBtn" class="secondary-button" type="button">Probar energía solar (3)</button><button id="exampleBtn" class="secondary-button" type="button">Probar con 6 licitaciones IA</button></div>
+<p class="help-text"><a href="datos/plantilla_consulta.csv" download>Descargar plantilla CSV</a> · <a href="https://github.com/germaquintana/mercadopublico/blob/main/docs/CONSULTA_TEMATICA_V1.md" target="_blank" rel="noopener noreferrer">Ver columnas admitidas</a></p>
+</section>
+</div>
+<div class="message-line" id="statusMessage" role="status" aria-live="polite">Sin datos importados. Puedes probar con las seis licitaciones IA o cargar un archivo propio.</div>
+<section class="query-results" id="queryResults" hidden aria-labelledby="queryResultTitle">
+<div class="section-row"><div><span class="section-kicker">03 / PANORAMA DEL EXTRACTO</span><h2 id="queryResultTitle">Resultados para <span id="currentTopic">la consulta</span></h2><p class="lead" id="coverageNote">Solo se analizan los registros importados.</p></div><div class="actions"><button id="showAll" class="secondary-button" type="button">Ver todos los cargados</button><button id="csvExport" class="primary-button" type="button">Exportar filtrados</button></div></div>
+<div id="queryMetrics" class="metric-grid" aria-label="Indicadores calculados sobre resultados importados"></div>
+<div class="analytics-grid query-graphs">
+<article class="surface chart-panel"><div class="panel-head"><div><span class="panel-eyebrow">COMPOSICIÓN</span><h3>Tipos de compra</h3></div></div><p class="panel-helper">Distribución por clasificación declarada en el archivo.</p><div id="queryCategories" class="bar-list"></div></article>
+<article class="surface chart-panel"><div class="panel-head"><div><span class="panel-eyebrow">COMPRADORES</span><h3>Organismos</h3></div></div><p class="panel-helper">Quiénes aparecen como compradores en el extracto.</p><div id="queryBuyers" class="buyer-list"></div></article>
+</div>
+<div class="surface query-money"><h3>Montos declarados en el archivo</h3><p>Montos orientativos según el campo importado; no certifican presupuesto, adjudicación, pagos o IVA.</p><div id="queryAmounts" class="money-groups"></div></div>
+<div class="filter-feedback"><p id="queryCount" role="status">—</p><p class="subtle">Selecciona una licitación para examinar su ficha.</p></div>
+<div class="results-layout">
+<div class="surface results-surface"><div class="results-head"><h3>Procesos coincidentes</h3><span class="results-sort">Muestra acotada</span></div><div id="queryList" class="results-list" aria-label="Resultados de la consulta libre"></div></div>
+<aside id="queryDetail" class="surface detail-surface" aria-label="Detalle del proceso seleccionado"></aside>
+</div>
+<p class="fineprint">El estado de un registro importado no está confirmado por la API. La falta de resultados no significa ausencia de licitaciones en Mercado Público. Comprueba vigencia, bases y anexos en el portal oficial.</p>
+</section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>Consulta temática · Observatorio de Compras Públicas</strong><p>Herramienta local para análisis de extractos limitados. No pertenece a ChileCompra y no sustituye el portal oficial.</p></div><div class="footer-links"><a href="index.html">Volver al dashboard general</a><a href="https://www.mercadopublico.cl/" target="_blank" rel="noopener noreferrer">Mercado Público</a></div></div></footer>
+</body></html>
