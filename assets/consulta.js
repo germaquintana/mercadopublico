@@ -47,7 +47,7 @@ function renderAmounts(stats){
  if(!stats.amountGroups.length)root.append(make("div","money-empty","Sin montos declarados en los registros coincidentes."));
  stats.amountGroups.forEach(g=>{
   const d=make("div","money-item");
-  add(d,make("strong","money-val",L.fmtMoney(g.value,g.currency)),make("span","money-type",L.amountName(g)),make("span","money-note",g.count+" registros en este grupo; origen no validado"));
+  add(d,make("strong","money-val",L.fmtMoney(g.value,g.currency)),make("span","money-type",L.amountName(g)),make("span","money-note",g.count+" "+(g.count===1?"registro":"registros")+" en este grupo; origen no validado"));
   root.append(d);
  });
 }
