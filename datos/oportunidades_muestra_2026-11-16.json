@@ -1,0 +1,127 @@
+{
+  "schema": "observatorio_oportunidades_muestra_v1",
+  "as_of_chile": "2026-11-16",
+  "timezone": "America/Santiago",
+  "source_level": "fichas secundarias públicas indexadas, enlaces oficiales derivados de botones de fichas; sin API masiva ni lectura de bases",
+  "scope": "muestra manual no exhaustiva; status no confirmado en tiempo real",
+  "records": [
+    {
+      "id": "592-31-LP26",
+      "title": "Estudio cualitativo curricular y curso autoinstruccional",
+      "buyer": "Subsecretaría de Educación",
+      "summary": "Estudio de implementación curricular del nivel laboral de educación especial y diseño de curso autoinstruccional para docentes de escuelas especiales.",
+      "topics": [
+        "pedagogia"
+      ],
+      "category": "estudio",
+      "closing_at_chile": "2026-12-14T20:00:00-03:00",
+      "published_at": "2026-11-12",
+      "amount": 97000000,
+      "currency": "CLP",
+      "place": "Región Metropolitana",
+      "fit": "Alta afinidad para investigación educativa, diseño instruccional y metodología cualitativa; revisar capacidades y requisitos.",
+      "source_url": "https://calza.cl/licitacion/592-31-LP26",
+      "official_url": "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=592-31-LP26",
+      "source_note": "Registro indexado por Calza y Licitaciones de Chile; ficha oficial enlazada sin validación API."
+    },
+    {
+      "id": "875-9-LP26",
+      "title": "Inteligencia de mercado e investigación estratégica del sector TI",
+      "buyer": "Agencia de Promoción de la Inversión Extranjera (InvestChile)",
+      "summary": "Suscripción anual a plataforma de inteligencia de mercado TI con estudios, reportes, proyecciones, consultas a analistas y eventos. No equivale a un estudio a medida.",
+      "topics": [
+        "ti"
+      ],
+      "category": "estudio",
+      "closing_at_chile": "2026-12-02T15:00:00-03:00",
+      "published_at": "2026-11-12",
+      "amount": 82000000,
+      "currency": "CLP",
+      "place": "Región Metropolitana",
+      "fit": "Interesante para proveedor con plataforma y analistas especializados; menor ajuste para una consultoría sin suscripción tecnológica.",
+      "source_url": "https://calza.cl/licitacion/875-9-LP26",
+      "official_url": "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=875-9-LP26",
+      "source_note": "Ficha indexada por Calza/Licitaciones de Chile; acceso a bases y estado actual pendiente."
+    },
+    {
+      "id": "1082957-37-LE26",
+      "title": "Analítica y revirtualización de cursos del Aula Virtual de ProChile",
+      "buyer": "Dirección General de Promoción de Exportaciones (ProChile)",
+      "summary": "Desarrollo de reportería avanzada, analítica y actualización de cursos para mejorar la trazabilidad y oferta formativa del Aula Virtual; ejecución señalada de 3 meses.",
+      "topics": [
+        "pedagogia",
+        "ti"
+      ],
+      "category": "desarrollo",
+      "closing_at_chile": "2026-11-24T13:00:00-03:00",
+      "published_at": "2026-11-13",
+      "amount": 16000000,
+      "currency": "CLP",
+      "place": "Región Metropolitana",
+      "fit": "Alta afinidad interdisciplinaria entre analítica, ingeniería de software, plataformas educativas y diseño instruccional.",
+      "source_url": "https://calza.cl/licitacion/1082957-37-LE26",
+      "official_url": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1082957-37-LE26",
+      "source_note": "Datos de ficha indexada por Calza; no consta descarga de bases técnicas."
+    },
+    {
+      "id": "1076403-15-LE26",
+      "title": "Diez cuentas de agentes de IA para desarrollo de software",
+      "buyer": "Subsecretaría de Relaciones Exteriores",
+      "summary": "Suministro de diez cuentas de herramientas de IA para programación por veinte meses, con equivalentes admitidos según descripción publicada.",
+      "topics": [
+        "ia",
+        "ti"
+      ],
+      "category": "suministro",
+      "closing_at_chile": "2026-11-24T15:00:00-03:00",
+      "published_at": "2026-11-12",
+      "amount": 11000,
+      "currency": "USD",
+      "place": "Región Metropolitana",
+      "fit": "Oportunidad de licencias y suministro tecnológico, no de estudios ni asesorías; revisar compatibilidad de productos y bases.",
+      "source_url": "https://calza.cl/licitacion/1076403-15-LE26",
+      "official_url": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1076403-15-LE26",
+      "source_note": "Datos de Calza y LicitaFast; monto expresado en USD, nunca sumar con CLP."
+    },
+    {
+      "id": "2343-36-LE26",
+      "title": "Infraestructura de cómputo para inteligencia artificial",
+      "buyer": "Municipalidad de Santiago",
+      "summary": "Adquisición de infraestructura de cómputo avanzado para capacidades locales de IA, de acuerdo con requisitos técnicos de la licitación.",
+      "topics": [
+        "ia",
+        "ti"
+      ],
+      "category": "suministro",
+      "closing_at_chile": "2026-11-20T19:00:00-03:00",
+      "published_at": "2026-11-10",
+      "amount": null,
+      "currency": null,
+      "place": "Región Metropolitana",
+      "fit": "Adquisición de hardware/servidores, no servicio de investigación; relevante para proveedores de infraestructura TI.",
+      "source_url": "https://calza.cl/licitacion/2343-36-LE26",
+      "official_url": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2343-36-LE26",
+      "source_note": "Ficha indexada en Calza, presupuesto no informado."
+    },
+    {
+      "id": "4205-17-L126",
+      "title": "Capacitación docente en IA y diseño de recursos educativos",
+      "buyer": "Municipalidad de Curacaví — Educación",
+      "summary": "Formación en uso de inteligencia artificial para diseño de recursos educativos en la Escuela Valle de Puangue. Ejemplo histórico: plazo de ofertas vencido.",
+      "topics": [
+        "pedagogia",
+        "ia"
+      ],
+      "category": "formacion",
+      "closing_at_chile": "2026-11-10T11:29:00-03:00",
+      "published_at": "2026-11-03",
+      "amount": null,
+      "currency": null,
+      "place": "Región Metropolitana",
+      "fit": "Ejemplo valioso para identificar nuevas oportunidades de pedagogía e IA; NO está en plazo para presentar oferta.",
+      "source_url": "https://licitacionesdechile.cl/licitacion/4205-17-L126/capacitacion-a-los-docentes-en-el-uso-de-la-inteli",
+      "official_url": "https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=4205-17-L126",
+      "source_note": "Fuentes secundarias discrepan en la hora de cierre: se confirma fecha 10-11-2026, no hora exacta; requiere cotejo oficial."
+    }
+  ]
+}

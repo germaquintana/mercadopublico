@@ -1,46 +1,36 @@
-# Observatorio de Compras Públicas — piloto visual público
+# Observatorio de Compras Públicas — muestra pública navegable
 
-> **Estado a 16-11-2026:** el código público del visor está en `index.html` y **GitHub Pages figura habilitado** según metadatos de GitHub (`has_pages=true`, comprobación 16-11-2026). **No se ha podido verificar HTTP 200 ni ejecutar el visor desde el sitio en navegador remoto**; por tanto, la publicación operativa y su QA web permanecen pendientes de validación.
+**Corte editorial:** 16 de noviembre de 2026 (America/Santiago). **Sitio candidato:** https://germaquintana.github.io/mercadopublico/ — GitHub Pages habilitado en configuración de repositorio. La respuesta HTTP del dominio y el render web aún requieren comprobación externa; la presencia del HTML en GitHub no prueba el despliegue.
 
-## Abrir el producto
+## Vistas
 
-- Archivo público: [`index.html`](index.html).
-- URL del sitio de GitHub Pages (**habilitación confirmada, acceso HTTP no verificado**): https://germaquintana.github.io/mercadopublico/.
-- Configuración de Pages: [Settings → Pages](https://github.com/germaquintana/mercadopublico/settings/pages). Si la página no abre, revisar que el origen sea rama `main` y carpeta `/(root)` y consultar la ejecución del despliegue; no duplicar configuración.
-- No existe backend, servidor, token ni búsqueda nacional en esta edición. El HTML es autónomo.
+- [`index.html`](index.html): **nueva pantalla de oportunidades y estudios** sobre 6 licitaciones reales de muestra (5 con cierre posterior al corte, una histórica). Filtros por palabra o código, área IA/pedagogía/TI, naturaleza de contrato, fecha límite y calendario del cierre. Ficha con organismo, objeto, monto, fecha, encaje y enlaces al portal y fuente de contraste. CSV de los resultados filtrados.
+- [`expediente-respel.html`](expediente-respel.html): expediente piloto original `2373-38-LE23`, con sus dos órdenes de compra y clasificación documental pendiente. Separado para no contaminar oportunidades del área formativa.
+- [`datos/oportunidades_muestra_2026-11-16.json`](datos/oportunidades_muestra_2026-11-16.json): instantánea del catálogo manual y procedencia para auditoría. El HTML incluye una copia de la misma instantánea y **no realiza peticiones externas**.
+- El proyecto principal tiene autoridad sobre la ingesta y el estado del sistema. Esta publicación no contiene secretos ni referencias a archivos privados.
 
-## Qué muestra
+## Las seis licitaciones de la muestra
 
-Este primer corte tiene **un único expediente piloto precargado** para mostrar la futura experiencia de usuario, sin simular índice nacional:
+| Código | Área principal | Objeto | Cierre publicado (Chile) | Monto estimado |
+|---|---|---|---|---|
+| `592-31-LP26` | Pedagogía / estudio | Estudio curricular educación especial y curso autoinstruccional | 14-12-2026 20:00 | CLP 97.000.000 |
+| `875-9-LP26` | TI / investigación | Inteligencia de mercado mediante plataforma y suscripción | 02-12-2026 15:00 | CLP 82.000.000 |
+| `1082957-37-LE26` | Pedagogía + TI | Reportería, analítica y revirtualización de Aula Virtual ProChile | 24-11-2026 13:00 | CLP 16.000.000 |
+| `1076403-15-LE26` | IA + TI / bienes | 10 licencias de agentes de IA para programar | 24-11-2026 15:00 | USD 11.000 |
+| `2343-36-LE26` | IA + TI / bienes | Infraestructura computacional para IA | 20-11-2026 19:00 | No informado |
+| `4205-17-L126` | Pedagogía + IA / histórico | Capacitación de docentes en IA para recursos educativos | 10-11-2026 (vencido) | No informado |
 
-| Referencia | Importe | Qué representa | Límites |
-| --- | ---: | --- | --- |
-| Licitación **2373-38-LE23** | **CLP 7.130.073** | Presupuesto disponible con impuestos | No acredita adjudicación ni pago |
-| OC **2373-629-SE23** | **CLP 5.474** | Total de orden de compra (IVA incluido) | Cinco líneas nominales de 1 kg; no prueba ejecución |
-| OC **2373-52-SE25** | **CLP 2.324.070** | Total de orden de compra (IVA incluido) | 2.170 kg según tres líneas; no prueba recepción o pago |
+**No sumar divisas ni confundir presupuesto estimado con monto de adjudicación.** En Curacaví, dos índices discrepan en la hora del cierre; solo se considera confiable la fecha y el expediente está vencido.
 
-- [Ficha pública oficial LIC 2373-38-LE23](https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?qs=HxqwelYYhGoLfX5XQ6GXvQ%3D%3D)
-- [Ficha pública oficial OC 2373-629-SE23](https://www.mercadopublico.cl/PurchaseOrder/Modules/PO/DetailsPurchaseOrder.aspx?qs=NrALePC8xTC1yYw2Yh%2FCew%3D%3D)
-- [Ficha pública oficial OC 2373-52-SE25](https://www.mercadopublico.cl/PurchaseOrder/Modules/PO/DetailsPurchaseOrder.aspx?qs=g1LEIuIz2sU2o%2FOtOpY5KQ%3D%3D)
+## Procedencia y cautelas
 
-Las fichas son enlaces oficiales registrados por resultados indexados; su apertura puede requerir condiciones propias del portal. No se almacenaron los archivos originales. **Ningún enlace directo de adjunto se verificó.**
+Los datos se tomaron de fichas **públicas indexadas por terceros** ([Calza](https://calza.cl/licitaciones), [Licitaciones de Chile](https://licitacionesdechile.cl/) y [LicitaFast](https://licitafast.cl/)) el 16-11-2026 y se enlazaron a las fichas de origen en Mercado Público. Los enlaces de las fichas oficiales se extrajeron del botón oficial de esos proveedores, pero la apertura de los expedientes originales y sus bases no pudo verificarse en este ambiente. Los archivos o anexos mostrados por terceros no se descargaron ni custodiaron.
 
-## Funciones y límites de evidencia
+**Estado de la oportunidad:** la interfaz calcula *plazo futuro / vencido* desde el cierre indexado y el reloj actual; esto **no certifica que esté abierta**, ni considera cambios de cronograma, suspensiones o adjudicaciones. Antes de presupuestar o presentar ofertas hay que abrir la ficha oficial, comprobar estado actual, condiciones de admisibilidad, especificaciones, evaluación y requisitos técnicos. No existe alerta ni vigilancia automática.
 
-La interfaz contiene buscador y filtros **sobre un expediente**, pestañas de resumen, órdenes de compra, documentos, calidad y descarga CSV local. Sus datos son de referencia para diseñar el producto; no corresponden a un catálogo curado. Los precios nominales por kilogramo en las OC **no son precios de mercado validados**. No se han comprobado el decreto original, acta, oferta económica, Formulario N.º 5, anexos, guías de despacho, recepción conforme ni pagos. Los documentos faltantes se identifican como **pendientes**, nunca como inexistentes.
+## Seguridad, límites y siguientes entregables
 
-**La exportación CSV no implica análisis económico validado.** Incluye celdas vacías cuando falta respaldo y no calcula precios de mercado.
-
-## Privacidad y arquitectura federada
-
-Este repositorio público conserva únicamente el código HTML autónomo y los datos ya indicados en fichas públicas. No incluye documentos originales, datos personales no necesarios, credenciales, respuestas privadas de API, expedientes internos ni workflows de ingesta.
-
-El desarrollo técnico y las decisiones metodológicas permanecen bajo autoridad de su origen. Esta publicación **no** autoriza descargas históricas, indexación masiva ni nuevas automatizaciones. No hay sincronización automática ni dependencia de un repositorio privado.
-
-## Historial técnico de esta publicación
-
-- **16-11-2026:** publicación inicial del MVP HTML en raíz desde código revisado del piloto, adaptado para enlaces exclusivamente públicos.
-- **16-11-2026 (seguimiento):** el titular habilitó Pages; los metadatos de GitHub corroboran `has_pages=true`, pero no se pudo obtener una respuesta HTTP desde el comprobador remoto. Verificación de compilación sintáctica del script y referencias DOM estática: OK. La prueba E2E sigue pendiente.
-- Controles estáticos: verificar códigos, montos, pestañas, exportación CSV, ausencia de credenciales y enlaces a repositorios privados.
-- **Habilitación de Pages confirmada por metadatos; pendiente:** HTTP 200 y prueba funcional de pestañas, filtros y CSV desde el sitio real.
-- Ningún dato publicado acredita pagos, precios contractuales curados ni totalidad de órdenes vinculadas.
+- HTML estático, sin solicitudes API, credenciales, documentos originales, información privada ni automatización.
+- Catálogo demostrativo manual de seis casos; **no** cubre todo el país ni se ha activado la indexación masiva (G4), descargas (G3) o automatizaciones (G5).
+- Pendiente de QA en navegador real y HTTP del dominio Pages (MP-INT-12).
+- Próximo módulo propuesto: selección por criterios/perfil del proveedor, revisión profunda de bases **solo tras autorización**, alertas de fecha previa revisión del permiso G5 y búsqueda de varias licitaciones por API bajo una nueva autorización acotada.
