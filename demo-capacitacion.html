@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Maqueta pública interactiva del Observatorio de Compras Públicas: cursos de inteligencia artificial, pedagogía digital, Power BI y formación tecnológica.">
+<title>Maqueta | Cursos de IA, tecnología y educación · Observatorio</title>
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/formacion-demo.css">
+<script defer src="assets/logic.js"></script>
+<script defer src="assets/formacion-demo-data.js"></script>
+<script defer src="assets/formacion-demo.js"></script>
+</head>
+<body class="pitch">
+<a href="#resumen" class="skip-link">Saltar al resumen</a>
+<header class="pitch-hero">
+<div class="container">
+  <div class="pitch-nav">
+    <a href="index.html" class="brand"><span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Observatorio <small>COMPRAS PÚBLICAS</small></span></a>
+    <div class="pitch-nav-links"><a href="index.html?tema=formacion">Dashboard general</a><a href="consulta.html">Consulta libre</a><a href="https://github.com/germaquintana/mercadopublico/blob/main/docs/MAQUETA_FORMACION_EQUIPO.md" target="_blank" rel="noopener noreferrer">Metodología ↗</a></div>
+  </div>
+  <div class="pitch-hero-grid">
+    <div>
+      <div class="pitch-overline"><span class="pitch-beacon"></span> CASO DE USO DEMOSTRATIVO · 16 NOV 2026</div>
+      <h1>Mercado de <em>cursos de IA, tecnología</em> y educación.</h1>
+      <p class="pitch-hero-lead">Del panorama de compras públicas a las oportunidades concretas: descubre quién solicita capacitación, sobre qué contenidos y cómo profundizar en cada proceso.</p>
+      <div class="pitch-hero-actions"><a class="pitch-button-main" href="#resumen">Ver panorama de la muestra <span aria-hidden="true">↓</span></a><a class="pitch-button-ghost" href="#procesos">Explorar procesos</a></div>
+    </div>
+    <div class="pitch-highlight" aria-label="Resumen introductorio">
+      <div class="pitch-highlight-top"><span>UNA PREGUNTA DE MERCADO</span><span>01 / 03</span></div>
+      <h2>¿En qué está invirtiendo el Estado para formar capacidades digitales?</h2>
+      <div class="pitch-highlight-foot"><div><span id="heroCount">16</span><small>procesos ilustrativos</small></div><div><span id="heroFuture">—</span><small>con cierre futuro*</small></div></div>
+    </div>
+  </div>
+</div>
+</header>
+<main>
+<div class="container">
+ <div class="pitch-warning"><span class="pitch-warning-icon" aria-hidden="true">i</span><div><strong>Maqueta basada en procesos reales, no un buscador nacional en tiempo real.</strong> Muestra editorial de 16 procesos de 2026, incluidos históricos y Compras Ágiles. Los plazos son los publicados en las fichas consultadas; «cierre futuro» no certifica apertura vigente. Los montos no son adjudicaciones ni pagos, salvo que se indique expresamente su naturaleza.</div></div>
+ <section id="resumen" class="pitch-section" aria-labelledby="overviewTitle">
+   <div class="pitch-section-title"><div><span class="pitch-index">01 / PANORAMA</span><h2 id="overviewTitle">Una fotografía del mercado de formación digital</h2><p>Indicadores calculados sobre los procesos de la muestra. Puedes filtrar y seguir desde el resumen hasta los expedientes.</p></div><span class="pitch-corte">CORTE DOCUMENTAL · 16.11.2026</span></div>
+   <div class="pitch-kpi-grid" id="pitchKpis"></div>
+   <div class="pitch-chart-grid">
+     <article class="pitch-chart-card"><div class="pitch-chart-head"><div><span class="pitch-mini-label">DEMANDA POR TIPO</span><h3>¿Qué capacitación se solicita?</h3></div><span class="pitch-small-pill" id="catNumber">—</span></div><div id="pitchCategoryBars" class="pitch-bar-list"></div><p class="pitch-chart-foot">Pulsa una categoría para explorar sus compras.</p></article>
+     <article class="pitch-chart-card"><div class="pitch-chart-head"><div><span class="pitch-mini-label">PLAZO DE OFERTAS</span><h3>Históricos y cierres futuros</h3></div><span class="pitch-small-pill">No es estado oficial</span></div><div class="pitch-deadline-grid" id="pitchDeadline"></div><p class="pitch-chart-foot">El cálculo se basa en la fecha de cierre indexada, no en una comprobación del portal en vivo.</p></article>
+     <article class="pitch-chart-card"><div class="pitch-chart-head"><div><span class="pitch-mini-label">COMPRADORES</span><h3>Organismos de la muestra</h3></div><span class="pitch-small-pill" id="buyerNumber">—</span></div><div id="pitchBuyers" class="pitch-buyer-list"></div><p class="pitch-chart-foot">Las instituciones se presentan tal como aparecen identificadas en cada ficha.</p></article>
+     <article class="pitch-chart-card"><div class="pitch-chart-head"><div><span class="pitch-mini-label">MONTO DOCUMENTADO</span><h3>Presupuestos sin mezclas</h3></div><span class="pitch-small-pill" id="moneyNumber">—</span></div><div id="pitchMoney" class="pitch-money-list"></div><p class="pitch-chart-foot">Separación estricta por naturaleza del monto y tratamiento tributario. No se infieren valores faltantes.</p></article>
+   </div>
+ </section>
+ <section class="pitch-section pitch-insights" aria-labelledby="insightsTitle">
+  <div class="pitch-section-title"><div><span class="pitch-index">02 / LECTURA TEMÁTICA</span><h2 id="insightsTitle">Tres rutas para interpretar la demanda</h2><p>Ejemplos de cómo convertir un listado de procesos en un mapa de servicios que puede ofrecer un equipo.</p></div></div>
+  <div class="pitch-insight-grid">
+   <button type="button" class="pitch-insight" data-focus="curso_ia"><span class="pitch-insight-number">A / IA APLICADA</span><strong>Uso cotidiano de IA y alfabetización digital</strong><span>Cursos de IA generativa, productividad, uso ético y seguro de herramientas.</span><span class="pitch-insight-more">Explorar casos ↗</span></button>
+   <button type="button" class="pitch-insight" data-focus="docencia_digital"><span class="pitch-insight-number">B / PEDAGOGÍA DIGITAL</span><strong>Docentes, PIE e innovación de aula</strong><span>Formación didáctica para equipos educativos que integran inteligencia artificial.</span><span class="pitch-insight-more">Explorar casos ↗</span></button>
+   <button type="button" class="pitch-insight" data-focus="analitica_bi"><span class="pitch-insight-number">C / DATOS Y BI</span><strong>Analítica, visualización y herramientas digitales</strong><span>Formación en Power BI y uso de IA en análisis de información de gestión.</span><span class="pitch-insight-more">Explorar casos ↗</span></button>
+  </div>
+ </section>
+ <section class="pitch-section" id="procesos" aria-labelledby="listTitle">
+  <div class="pitch-section-title pitch-results-title"><div><span class="pitch-index">03 / EXPLORADOR</span><h2 id="listTitle">De los indicadores al expediente</h2><p>Filtra por contenido, comprador y plazo; selecciona una compra para abrir su descripción, evidencia y fuente oficial.</p></div><button id="downloadCsv" class="pitch-export" type="button">Exportar selección CSV ↓</button></div>
+  <div class="pitch-filter-top">
+   <div class="pitch-filter-search"><label for="pitchQuery">Buscar dentro de la muestra</label><input id="pitchQuery" type="search" placeholder="IA, Power BI, docentes, SLEP, código…"></div>
+   <div class="pitch-filter-select"><label for="pitchCategory">Área de capacitación</label><select id="pitchCategory"><option value="">Todas las áreas</option></select></div>
+   <div class="pitch-filter-select"><label for="pitchDeadlineFilter">Fecha del cierre publicado</label><select id="pitchDeadlineFilter"><option value="">Todos los plazos</option><option value="future">Cierre futuro*</option><option value="past">Plazo vencido</option><option value="unknown">Sin fecha</option></select></div>
+   <button class="pitch-reset" id="pitchReset" type="button">Limpiar</button>
+  </div>
+  <p id="pitchStatus" class="pitch-status" role="status" aria-live="polite">Preparando fichas…</p>
+  <div class="pitch-explorer">
+   <div class="pitch-results"><div class="pitch-list-title"><strong>Procesos de compra</strong><span>Selecciona una ficha ↘</span></div><div id="pitchList" aria-label="Licitaciones y Compras Ágiles"></div></div>
+   <aside class="pitch-detail" id="pitchDetail" aria-live="polite" aria-label="Expediente del proceso seleccionado"><p>Selecciona una ficha de la lista para examinar la información pública disponible.</p></aside>
+  </div>
+ </section>
+ <section class="pitch-section pitch-next" aria-labelledby="nextTitle">
+   <div><span class="pitch-index">04 / CÓMO CRECE ESTE PRODUCTO</span><h2 id="nextTitle">Una maqueta reutilizable, no un reporte estático</h2><p>Este ejemplo usa el mismo modelo de datos del Observatorio general. Al incorporar nuevas licitaciones verificadas, los totales, gráficos y fichas se recalculan sin rehacer la interfaz.</p></div>
+   <div class="pitch-next-links"><a href="index.html?tema=formacion">Ir al dashboard transversal ↗</a><a href="consulta.html">Investigar otro tema ↗</a></div>
+ </section>
+</div>
+</main>
+<footer class="pitch-footer"><div class="container"><div><strong>Observatorio de Compras Públicas</strong><p>Demostración construida con fichas públicas indexadas. Sin vinculación oficial con ChileCompra.</p></div><div><a href="https://www.mercadopublico.cl/" target="_blank" rel="noopener noreferrer">Mercado Público oficial ↗</a><a href="https://github.com/germaquintana/mercadopublico/blob/main/datos/maqueta_cursos_ia_ti_educacion_2026-11-16.json" target="_blank" rel="noopener noreferrer">Datos de muestra ↗</a></div></div></footer>
+</body></html>

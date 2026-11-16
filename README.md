@@ -5,6 +5,12 @@
 
 > GitHub Pages está habilitado; se verificaron los archivos y la navegación mediante una simulación de DOM, pero **el acceso HTTP al dominio publicado y la ejecución en navegador real no se pudieron comprobar desde el entorno de esta sesión**. La dirección no debe declararse validada como sitio vivo hasta obtener esa prueba.
 
+## Nueva maqueta para presentar al equipo — cursos de IA, tecnología y educación
+
+[**Abrir maqueta ejecutiva**](demo-capacitacion.html) · [**Ver como mercado en el dashboard general**](index.html?tema=formacion) · [**Dataset y 16 expedientes**](datos/maqueta_cursos_ia_ti_educacion_2026-11-16.json) · [**Guía para reunión**](docs/MAQUETA_FORMACION_EQUIPO.md).
+
+La maqueta incorpora **16 procesos reales de muestra** con fuentes oficiales indexadas o índices públicos: cursos de IA generativa, innovación docente, Power BI, IA aplicada a administración y programas de formación. Seis procesos presentan montos de referencia; solo tres tienen cierre posterior al 16-11-2026 19:00 Chile **por calendario**, sin confirmar que estén abiertos al momento de consultar. No se descargaron bases originales ni se ejecutó una búsqueda en vivo. El Observatorio general amplía su catálogo de 13 a **29 procesos** y suma un cuarto sector (cinco vistas contando «Todos»). El servicio G2 automático continúa **sin desplegar**.
+
 ## Backend G2 temático: implementado, pendiente de despliegue
 
 Se creó un [Worker protegido](backend/src/worker.mjs) para consultar **de uno a tres días de publicaciones** de la API de Mercado Público, filtrar por tema, devolver hasta 40 fichas y registrar cobertura del período. Tiene [pruebas offline](backend/test/worker.test.mjs), validación Turnstile, limitación de frecuencia y [configuración de secretos](backend/wrangler.toml) separada del navegador.
@@ -19,7 +25,7 @@ Se creó un [Worker protegido](backend/src/worker.mjs) para consultar **de uno a
 
 ## ¿Qué se puede hacer?
 
-1. Seleccionar un mercado: **IA, pedagogía y TI** (6 licitaciones), **residuos peligrosos** (1 licitación + 2 OC), **arbolado y áreas verdes** (6 licitaciones) o **todos los ejemplos** (13 licitaciones, sin mezclas monetarias).
+1. Seleccionar un mercado: **IA, pedagogía y TI** (6 licitaciones), **residuos peligrosos** (1 licitación + 2 OC), **arbolado y áreas verdes** (6), **cursos IA y educación** (16 procesos: 11 licitaciones y 5 Compras Ágiles), o **todos los ejemplos** (29 procesos, sin mezclar montos incompatibles).
 2. Leer un **panorama temático**: total de procesos seleccionados, calendario de cierres, organismos compradores, cobertura de montos, distribución por tipo, meses y compradores.
 3. Usar búsqueda por palabra, código, organismo y tema; filtrar por naturaleza, cierre publicado y comprador. Los gráficos de categorías, meses y compradores son **filtros interactivos**.
 4. Abrir la **ficha detallada**: objeto, fechas, tipo, monto con naturaleza económica, estado de la fuente, calidad de evidencia y enlaces oficiales/secundarios. El expediente RESPEL presenta dos órdenes de compra relacionadas, diferenciadas del presupuesto.
@@ -27,8 +33,9 @@ Se creó un [Worker protegido](backend/src/worker.mjs) para consultar **de uno a
 
 ## Alcance real de la información
 
-**Esto NO es todavía un buscador de todo Mercado Público.** La búsqueda funciona solo sobre los **13 registros manuales seleccionados** para demostrar el producto general. No hay actualización automática, consulta masiva en navegador, cobro, cuentas, token ni servicio externo. Los resultados no prueban que una convocatoria siga abierta: *plazo futuro* depende únicamente de la fecha indexada comparada con el reloj. Las fuentes pueden estar desactualizadas.
+**Esto NO es todavía un buscador de todo Mercado Público.** La búsqueda funciona solo sobre los **29 registros manuales seleccionados** para demostrar el producto general. No hay actualización automática, consulta masiva en navegador, cobro, cuentas, token ni servicio externo. Los resultados no prueban que una convocatoria siga abierta: *plazo futuro* depende únicamente de la fecha indexada comparada con el reloj. Las fuentes pueden estar desactualizadas.
 
+- **Cursos de IA, tecnología y educación (16):** muestra mixta de 11 licitaciones y 5 Compras Ágiles de formación tecnológica, pedagogía digital, Power BI y programas multicurso. [Maqueta de equipo](demo-capacitacion.html) · [Dataset](datos/maqueta_cursos_ia_ti_educacion_2026-11-16.json).
 - **IA, pedagogía y TI (6):** 592-31-LP26, 875-9-LP26, 1082957-37-LE26, 1076403-15-LE26, 2343-36-LE26, 4205-17-L126. Datos obtenidos de fichas secundarias indexadas; bases originales y estado actual no comprobados.
 - **RESPEL (1 + 2 OC):** 2373-38-LE23, con órdenes de compra 2373-629-SE23 y 2373-52-SE25. Una consulta API puntual histórica y fichas oficiales indexadas; montos de OC no son pagos ni prueban recepción.
 - **Arbolado y áreas verdes (6):** 2342-42-LR26 (San Bernardo), 2686-143-LP26 (Colina), 218-53-LR26 (San Joaquín), 1655-44-LP26 (Atención Primaria Metropolitana Central), 3621-33-LP26 (Cabildo, **desierta según fuente**) y 2275-1-LR26 (La Pintana, **adjudicación neta según acta**). Se cruzaron fichas oficiales indexadas y fuentes secundarias. En Cabildo no se consigna cierre preciso. Montos faltantes no se estiman.
@@ -56,7 +63,7 @@ Los gráficos muestran la composición de **la selección** y no una cuota de me
 | [`assets/styles.css`](assets/styles.css) | Sistema visual adaptable a escritorio y móvil |
 | [`assets/logic.js`](assets/logic.js) | Modelo puro: filtros, estadísticas, plazos, montos y exportación |
 | [`assets/app.js`](assets/app.js) | Interacción de selección, gráficos, fichas y URL compartible |
-| [`datos/catalogo_demo_v2.json`](datos/catalogo_demo_v2.json) | **Fuente de datos pública de la muestra**, cuatro mercados y 13 procesos |
+| [`datos/catalogo_demo_v2.json`](datos/catalogo_demo_v2.json) | **Fuente de datos pública de la muestra**, cinco vistas (cuatro mercados y Todos), 29 procesos |
 | [`assets/catalog.js`](assets/catalog.js) | Copia JS estática generada desde el JSON para abrir el dashboard sin API ni `fetch` |
 | [`scripts/sync_catalog.py`](scripts/sync_catalog.py) | Generador/validador de sincronía entre JSON y JS |
 | [`expediente-respel.html`](expediente-respel.html) | Vista histórica del piloto documental original |
@@ -66,7 +73,7 @@ Los gráficos muestran la composición de **la selección** y no una cuota de me
 
 ## Pruebas y limitaciones al cierre
 
-- Validación de dataset: 4 ámbitos (tres mercados + todos), 13 LIC sin duplicados, 2 OC asociadas, enlaces públicos y distinción de un monto adjudicado neto.
+- **Hito v2 original:** 4 ámbitos (tres mercados + Todos), 13 licitaciones sin duplicados, 2 OC asociadas y distinción de monto neto adjudicado. **Ampliación de maqueta:** 5 vistas, 29 procesos únicos, incluido nuevo mercado de formación con 16 procesos. Las pruebas nuevas se registran aparte, sin alterar retrospectivamente resultados anteriores.
 - **Modelo lógico:** 13 pruebas funcionales aisladas, incluyendo filtro temático, plazos, búsqueda con acentos, partición de montos, CSV y prevención de fórmulas.
 - **Interfaz:** 12 pruebas de simulación de DOM (4 selectores de mercado, 6/6 registros IA, 6/6 áreas verdes, filtro por categoría a 4 resultados, RESPEL y OC, búsqueda vacía), sin errores detectados.
 - **Queda pendiente:** prueba HTTP 200 de Pages y QA de navegador real en móvil y escritorio, más lectura de bases oficiales y sincronización de mayor cobertura.

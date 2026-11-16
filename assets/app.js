@@ -12,7 +12,7 @@ query:qp.get("q")||"",
 category:"",buyer:"",deadline:"",month:""
 };
 let selected=qp.get("id")||"";
-const marks={todos:"Σ",ia:"IA",respel:"R",verde:"AV"};
+const marks={todos:"Σ",ia:"IA",respel:"R",verde:"AV",formacion:"EDU"};
 function make(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
 function add(parent,...children){children.forEach(c=>parent.append(c));return parent;}
 function button(cls,label,action){const e=make("button",cls,label);e.type="button";e.addEventListener("click",action);return e;}
@@ -47,7 +47,7 @@ const b=button("market-card","",()=>{
 b.setAttribute("aria-pressed",String(state.market===m.id));
 b.setAttribute("aria-label",m.name+", "+recs.length+" procesos de muestra");
 const mark=make("span","market-icon",marks[m.id]||m.name.slice(0,2).toUpperCase());mark.style.background=m.color||"#376b7e";
-add(b,mark,make("strong",null,m.name),make("span","market-desc",m.short||m.description),make("span","market-foot",recs.length+" licitaciones de ejemplo"));
+add(b,mark,make("strong",null,m.name),make("span","market-desc",m.short||m.description),make("span","market-foot",recs.length+" procesos de ejemplo"));
 root.append(b);
 });
 }
@@ -160,7 +160,7 @@ return d==="future"?"Cierre futuro*":d==="past"?"Plazo vencido":"Sin fecha confi
 }
 function showResults(recs){
 const root=$("resultsList");root.replaceChildren();
-$("resultsCount").textContent=recs.length+" de "+baseRecords().length+" licitaciones visibles en el ejemplo.";
+$("resultsCount").textContent=recs.length+" de "+baseRecords().length+" procesos visibles en el ejemplo.";
 if(!recs.length){root.append(make("div","empty-results","No hay registros con estos filtros. Prueba otro término o elige un ejemplo distinto."));selected="";showDetail(null);return;}
 if(!recs.some(r=>r.id===selected))selected=recs[0].id;
 recs.forEach(r=>{
@@ -192,7 +192,7 @@ if(!r){
 const d=make("div","empty-detail");add(d,make("strong",null,"Sin procesos coincidentes"),make("p",null,"Prueba otros filtros o cambia de ejemplo."));root.append(d);return;
 }
 const hd=make("div","detail-head");
-add(hd,make("span","detail-code",r.id),make("span","microtag",r.modality||"Modalidad no indicada"));
+add(hd,make("span","detail-code",r.id),make("span","microtag",(r.type==="compra_agil"?"Compra Ágil · ":"")+(r.modality||"Modalidad no indicada")));
 root.append(hd);
 root.append(make("h3","detail-title",r.title));
 root.append(make("p","detail-buyer",r.buyer+" · "+r.region));

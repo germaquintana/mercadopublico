@@ -2,15 +2,19 @@
 (function(g){
 "use strict";
 const labels={
+curso_ia:"Capacitación en IA",
+docencia_digital:"Pedagogía digital",
+analitica_bi:"Analítica y Power BI",
+programa_multicurso:"Programas de formación",
 estudio:"Estudios e investigación",desarrollo:"Desarrollo tecnológico",capacitacion:"Capacitación y docencia",
 suministro:"Licencias y equipamiento",servicio_especializado:"Servicio especializado",
 arbolado:"Manejo de arbolado",mantencion:"Mantención de áreas verdes"
 };
 const amountNames={
-presupuesto_estimado:"Presupuesto estimado (IVA por verificar)",
-presupuesto_disponible:"Presupuesto disponible (IVA incluido)",
+presupuesto_estimado:"Presupuesto estimado",
+presupuesto_disponible:"Presupuesto disponible",
 adjudicacion_neta:"Monto adjudicado neto",
-oc_total:"Total de orden de compra (IVA incluido)",
+oc_total:"Total de orden de compra",
 monto_reportado_sin_verificar:"Monto de archivo (naturaleza económica no verificada)"
 };
 const moneyTax={sin_verificar:"IVA sin verificar",incluido:"IVA incluido",no_incluido:"Neto",desconocido:"IVA por verificar"};

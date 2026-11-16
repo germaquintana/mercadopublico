@@ -43,7 +43,7 @@ main.container{padding-top:36px;padding-bottom:48px}
 .market-section,.overview{margin-bottom:36px}
 .sample-flag{display:flex;align-items:center;gap:8px;color:#6b7f8c;font-size:12px;border:1px solid var(--edge);padding:8px 11px;border-radius:99px;background:#fff;white-space:nowrap}
 .flag-circle{background:#bf915a}
-.market-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.market-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .market-card{display:block;text-align:left;background:#fff;border:1px solid #d6e3e8;padding:20px;border-radius:14px;min-height:179px;box-shadow:var(--shadow);transition:border .15s,transform .15s,box-shadow .15s;width:100%;color:inherit}
 .market-card:hover{transform:translateY(-2px);border-color:#96c3ca;box-shadow:0 8px 24px #19374610}
 .market-card[aria-pressed=true]{border:2px solid var(--teal);padding:19px;background:#eff9f9;box-shadow:0 7px 19px #0e7e8b11}
@@ -157,3 +157,12 @@ main.container{padding-top:36px;padding-bottom:48px}
 /* Acceso destacado al puente temático no autenticado */
 .topnav .nav-live{border:1px solid #76b7c6;border-radius:7px;padding:7px 10px;color:#fff;background:#186076}
 .hero-copy .search-hint a{color:#fff;text-decoration:underline;font-weight:750}
+
+/* CTA de maqueta formativa, conectado al observatorio general */
+.pitch-promo{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(105deg,#e8f3f8,#f1eaf9);border:1px solid #d7e5ee;border-radius:13px;padding:16px 20px;margin:0 0 16px}
+.pitch-promo-label{display:block;color:#7655aa;letter-spacing:.11em;font-size:10px;font-weight:810}
+.pitch-promo strong{display:block;font-size:16px;letter-spacing:-.02em;margin:4px 0}
+.pitch-promo p{color:#617687;font-size:12px;margin:0}
+.pitch-promo a{display:inline-flex;align-items:center;justify-content:center;background:#7251aa;color:#fff;border-radius:8px;font-size:12px;padding:11px 14px;font-weight:800;text-decoration:none;white-space:nowrap}
+.pitch-promo a:hover{background:#563980}
+@media(max-width:760px){.pitch-promo{display:block}.pitch-promo a{margin-top:13px}.market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
