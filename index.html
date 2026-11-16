@@ -1,133 +1,118 @@
 <!doctype html>
-<html lang="es-CL"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Observatorio de Compras Públicas — Oportunidades IA, Educación y TI</title>
-<meta name="description" content="Muestra pública navegable de licitaciones y oportunidades de estudios, pedagogía, inteligencia artificial y tecnologías de la información.">
-<style>
-:root{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#172b3c;background:#f3f6f9}
-*{box-sizing:border-box}body{margin:0}a{color:#08739b}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffbd4a;outline-offset:2px}
-header{background:#113449;color:#fff;padding:26px 0 22px}header .sub{color:#a8cad9;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
-header h1{font-size:clamp(26px,3.3vw,38px);margin:6px 0}header p{line-height:1.5;color:#d4e4ec;max-width:940px}
-.wrap{max-width:1300px;margin:auto;padding:0 22px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.nav a{display:inline-block;padding:10px 14px;border:1px solid #8fb2c7;border-radius:9px;color:#fff;text-decoration:none;font-weight:650}.nav a.current{background:#e4f4fb;color:#123b50;border-color:#e4f4fb}
-main{padding-top:22px;padding-bottom:38px}.alert{border:1px solid #e2be86;background:#fff5e3;color:#624d26;padding:14px 18px;border-radius:12px;line-height:1.55;margin-bottom:20px}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 20px}.kpi{border:1px solid #d9e5ed;border-radius:12px;background:white;padding:16px}.kpi strong{display:block;font-size:26px;color:#163d54}.kpi span{font-size:13px;color:#617588}
-.shell{display:grid;grid-template-columns:265px minmax(300px,1fr) minmax(360px,1.25fr);gap:15px;align-items:start}
-.panel{background:white;border:1px solid #dce6ed;border-radius:14px;padding:17px;box-shadow:0 3px 8px #1734480c}
-.panel h2{font-size:17px;margin:0 0 14px}.filter{margin-bottom:13px}.filter label{font-size:12px;font-weight:730;display:block;margin:0 0 5px}
-.filter input,.filter select{font-size:14px;width:100%;padding:10px 11px;border-radius:8px;border:1px solid #afc6d4;background:white;color:#213949}
-.button{font:inherit;font-size:13px;font-weight:700;border:1px solid #a7c3d2;background:white;border-radius:9px;padding:9px 12px;color:#164e69;cursor:pointer}
-.button.primary{background:#0c6788;color:#fff;border-color:#0c6788}.button:hover{filter:brightness(.95)}
-.subtle{color:#687e8c;font-size:12px;line-height:1.5}.listHead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}
-.item{width:100%;font:inherit;text-align:left;border:1px solid #d8e4eb;border-radius:10px;background:#fff;padding:13px 14px;margin-bottom:9px;cursor:pointer;line-height:1.5}
-.item[aria-pressed="true"]{border-color:#087b9b;background:#ecf8fb;box-shadow:inset 4px 0 #087b9b}.item:hover{border-color:#6ba9ba}
-.item .title{display:block;font-weight:750;margin:7px 0;color:#1c3544;font-size:14px}.item .meta{font-size:12px;color:#63788a}
-.tag{display:inline-block;padding:3px 8px;border-radius:99px;font-size:11px;background:#e7f1f7;color:#26576d;margin:1px 4px 1px 0;font-weight:700}
-.tag.deadline{background:#fff1d9;color:#80561a}.tag.expired{background:#f4e4e6;color:#7d343a}
-.detail h2{margin:4px 0 9px;font-size:21px;line-height:1.25}.detail p{line-height:1.55}.detail .eyebrow{color:#56778a;text-transform:uppercase;font-size:12px;letter-spacing:.06em;font-weight:700}
-.fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}.fieldBox{background:#f4f8fa;border:1px solid #e0eaf0;padding:12px;border-radius:10px}
-.fieldBox small{display:block;color:#657986}.fieldBox strong{font-size:15px;display:block;margin-top:5px}
-.detailLinks{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0}.detailLinks a{text-decoration:none;font-size:13px;font-weight:750;border:1px solid #0c6788;padding:10px 12px;border-radius:8px;color:#0c6788}
-.detailLinks a.primary{background:#0c6788;color:#fff}.note{border-left:3px solid #e1bb78;padding:10px 14px;background:#fff9ee;border-radius:3px;margin:15px 0;font-size:13px}
-h3{font-size:14px;margin:20px 0 8px}.empty{padding:16px;color:#677c88;border:1px dashed #b5c8d4;border-radius:9px}
-.footer{margin:20px 0 0;font-size:12px;color:#62778a;line-height:1.6}.footer a{color:#116e8a}
-@media(max-width:1120px){.shell{grid-template-columns:235px 1fr}.detail{grid-column:1/-1}}
-@media(max-width:700px){.wrap{padding:0 12px}.kpis{grid-template-columns:1fr 1fr}.kpis .kpi:last-child{grid-column:1/-1}.shell{grid-template-columns:1fr}.detail{grid-column:auto}.fields{grid-template-columns:1fr}}
-</style></head>
-<body><header><div class="wrap"><div class="sub">Memoria de trabajo · Observatorio público piloto</div>
-<h1>Oportunidades de compras públicas</h1>
-<p>Explora estudios, pedagogía, inteligencia artificial y tecnologías de la información. Esta muestra combina procesos con cierre futuro según el calendario publicado y un antecedente vencido para comparación.</p>
-<nav class="nav" aria-label="Secciones del observatorio"><a class="current" href="index.html" aria-current="page">Oportunidades y estudios</a><a href="expediente-respel.html">Expediente piloto RESPEL</a><a href="README.md">Método y fuentes (Markdown)</a></nav>
-</div></header>
-<main class="wrap">
-<div class="alert"><strong>Catálogo demostrativo, NO buscador en tiempo real.</strong> Corte de fuentes: 16-11-2026. Las fechas y montos se obtuvieron de fichas públicas indexadas; el estado jurídico, las eventuales prórrogas, requisitos y documentos originales <strong>se deben confirmar en Mercado Público</strong>. “Plazo futuro” solo compara la fecha de cierre publicada con la hora actual de Chile; no certifica que la convocatoria siga abierta.</div>
-<section class="kpis" aria-label="Resumen de muestra">
-<div class="kpi"><strong id="allCount">6</strong><span>Licitaciones de ejemplo</span></div>
-<div class="kpi"><strong id="futureCount">—</strong><span>Plazo de oferta futuro por calendario</span></div>
-<div class="kpi"><strong id="serviceCount">—</strong><span>Servicios y estudios de la muestra</span></div>
-</section>
-<div class="shell">
-<aside class="panel"><h2>Filtros</h2>
-<div class="filter"><label for="query">Palabra clave, código u organismo</label><input id="query" type="search" placeholder="Ej.: educación, IA, 592-31…"></div>
-<div class="filter"><label for="area">Área temática</label><select id="area"><option value="">Todas las áreas</option><option value="ia">Inteligencia artificial</option><option value="pedagogia">Pedagogía y educación</option><option value="ti">Tecnologías de la información</option></select></div>
-<div class="filter"><label for="category">Naturaleza</label><select id="category"><option value="">Todos los contratos</option><option value="servicios">Estudios, formación y desarrollo</option><option value="estudio">Estudios / investigación</option><option value="desarrollo">Desarrollo y servicios tecnológicos</option><option value="formacion">Formación / capacitación</option><option value="suministro">Software y equipamiento</option></select></div>
-<div class="filter"><label for="deadline">Fecha del cierre publicado</label><select id="deadline"><option value="">Todos los plazos</option><option value="future">Plazo futuro</option><option value="past">Plazo vencido</option></select></div>
-<div class="filter"><label for="before">Cierre publicado hasta</label><input id="before" type="date"></div>
-<button class="button" id="reset" type="button">Limpiar filtros</button>
-<p class="subtle">Los filtros actúan sobre registros locales ya cargados, no sobre todo Mercado Público.</p></aside>
-<section class="panel" aria-label="Resultados filtrados"><div class="listHead"><h2>Resultados</h2><button class="button" type="button" id="export">Exportar CSV</button></div>
-<p class="subtle" role="status" id="resultCount">Preparando registros…</p><div id="results"></div></section>
-<section class="panel detail" id="detail" aria-label="Ficha de oportunidad" aria-live="polite"><h2>Selecciona una oportunidad</h2><p class="subtle">Las fichas muestran fuente, naturaleza, plazo, adecuación temática y límites de verificación.</p></section>
-</div><p class="footer">Fuente de datos: fichas indexadas por terceros, referenciadas individualmente. Este proyecto no es parte de ChileCompra. No hay consultas API desde el navegador, credenciales, descargas de documentos, índice masivo ni actualizaciones automáticas. Consulta las <a href="https://github.com/germaquintana/mercadopublico/blob/main/README.md" target="_blank" rel="noopener noreferrer">advertencias y metodología</a>. El expediente RESPEL original permanece disponible como vista separada.</p>
-<script id="recordsData" type="application/json">{"schema":"observatorio_oportunidades_muestra_v1","as_of_chile":"2026-11-16","timezone":"America/Santiago","source_level":"fichas secundarias públicas indexadas, enlaces oficiales derivados de botones de fichas; sin API masiva ni lectura de bases","scope":"muestra manual no exhaustiva; status no confirmado en tiempo real","records":[{"id":"592-31-LP26","title":"Estudio cualitativo curricular y curso autoinstruccional","buyer":"Subsecretaría de Educación","summary":"Estudio de implementación curricular del nivel laboral de educación especial y diseño de curso autoinstruccional para docentes de escuelas especiales.","topics":["pedagogia"],"category":"estudio","closing_at_chile":"2026-12-14T20:00:00-03:00","published_at":"2026-11-12","amount":97000000,"currency":"CLP","place":"Región Metropolitana","fit":"Alta afinidad para investigación educativa, diseño instruccional y metodología cualitativa; revisar capacidades y requisitos.","source_url":"https://calza.cl/licitacion/592-31-LP26","official_url":"https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=592-31-LP26","source_note":"Registro indexado por Calza y Licitaciones de Chile; ficha oficial enlazada sin validación API."},{"id":"875-9-LP26","title":"Inteligencia de mercado e investigación estratégica del sector TI","buyer":"Agencia de Promoción de la Inversión Extranjera (InvestChile)","summary":"Suscripción anual a plataforma de inteligencia de mercado TI con estudios, reportes, proyecciones, consultas a analistas y eventos. No equivale a un estudio a medida.","topics":["ti"],"category":"estudio","closing_at_chile":"2026-12-02T15:00:00-03:00","published_at":"2026-11-12","amount":82000000,"currency":"CLP","place":"Región Metropolitana","fit":"Interesante para proveedor con plataforma y analistas especializados; menor ajuste para una consultoría sin suscripción tecnológica.","source_url":"https://calza.cl/licitacion/875-9-LP26","official_url":"https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=875-9-LP26","source_note":"Ficha indexada por Calza/Licitaciones de Chile; acceso a bases y estado actual pendiente."},{"id":"1082957-37-LE26","title":"Analítica y revirtualización de cursos del Aula Virtual de ProChile","buyer":"Dirección General de Promoción de Exportaciones (ProChile)","summary":"Desarrollo de reportería avanzada, analítica y actualización de cursos para mejorar la trazabilidad y oferta formativa del Aula Virtual; ejecución señalada de 3 meses.","topics":["pedagogia","ti"],"category":"desarrollo","closing_at_chile":"2026-11-24T13:00:00-03:00","published_at":"2026-11-13","amount":16000000,"currency":"CLP","place":"Región Metropolitana","fit":"Alta afinidad interdisciplinaria entre analítica, ingeniería de software, plataformas educativas y diseño instruccional.","source_url":"https://calza.cl/licitacion/1082957-37-LE26","official_url":"https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1082957-37-LE26","source_note":"Datos de ficha indexada por Calza; no consta descarga de bases técnicas."},{"id":"1076403-15-LE26","title":"Diez cuentas de agentes de IA para desarrollo de software","buyer":"Subsecretaría de Relaciones Exteriores","summary":"Suministro de diez cuentas de herramientas de IA para programación por veinte meses, con equivalentes admitidos según descripción publicada.","topics":["ia","ti"],"category":"suministro","closing_at_chile":"2026-11-24T15:00:00-03:00","published_at":"2026-11-12","amount":11000,"currency":"USD","place":"Región Metropolitana","fit":"Oportunidad de licencias y suministro tecnológico, no de estudios ni asesorías; revisar compatibilidad de productos y bases.","source_url":"https://calza.cl/licitacion/1076403-15-LE26","official_url":"https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1076403-15-LE26","source_note":"Datos de Calza y LicitaFast; monto expresado en USD, nunca sumar con CLP."},{"id":"2343-36-LE26","title":"Infraestructura de cómputo para inteligencia artificial","buyer":"Municipalidad de Santiago","summary":"Adquisición de infraestructura de cómputo avanzado para capacidades locales de IA, de acuerdo con requisitos técnicos de la licitación.","topics":["ia","ti"],"category":"suministro","closing_at_chile":"2026-11-20T19:00:00-03:00","published_at":"2026-11-10","amount":null,"currency":null,"place":"Región Metropolitana","fit":"Adquisición de hardware/servidores, no servicio de investigación; relevante para proveedores de infraestructura TI.","source_url":"https://calza.cl/licitacion/2343-36-LE26","official_url":"https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2343-36-LE26","source_note":"Ficha indexada en Calza, presupuesto no informado."},{"id":"4205-17-L126","title":"Capacitación docente en IA y diseño de recursos educativos","buyer":"Municipalidad de Curacaví — Educación","summary":"Formación en uso de inteligencia artificial para diseño de recursos educativos en la Escuela Valle de Puangue. Ejemplo histórico: plazo de ofertas vencido.","topics":["pedagogia","ia"],"category":"formacion","closing_at_chile":"2026-11-10T11:29:00-03:00","published_at":"2026-11-03","amount":null,"currency":null,"place":"Región Metropolitana","fit":"Ejemplo valioso para identificar nuevas oportunidades de pedagogía e IA; NO está en plazo para presentar oferta.","source_url":"https://licitacionesdechile.cl/licitacion/4205-17-L126/capacitacion-a-los-docentes-en-el-uso-de-la-inteli","official_url":"https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion=4205-17-L126","source_note":"Fuentes secundarias discrepan en la hora de cierre: se confirma fecha 10-11-2026, no hora exacta; requiere cotejo oficial."}]}</script>
-<script>
-"use strict";
-const config=JSON.parse(document.getElementById("recordsData").textContent);
-const records=config.records;
-const $=id=>document.getElementById(id);
-const fmtMoney=r=>r.amount===null?"No informado":new Intl.NumberFormat("es-CL",{style:"currency",currency:r.currency,maximumFractionDigits:0}).format(r.amount);
-const fmtDate=r=>new Intl.DateTimeFormat("es-CL",{dateStyle:"medium",timeStyle:"short",timeZone:"America/Santiago"}).format(new Date(r.closing_at_chile));
-const future=r=>new Date(r.closing_at_chile).getTime()>Date.now();
-const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-const titleOf={ia:"IA",ti:"TI",pedagogia:"Pedagogía"};
-const categoryOf={estudio:"Estudio / investigación",desarrollo:"Desarrollo tecnológico",formacion:"Capacitación",suministro:"Suministro de bienes / licencias"};
-let chosen="";
-let visible=[];
-function el(tag,cl,text){const v=document.createElement(tag);if(cl)v.className=cl;if(text!==undefined)v.textContent=text;return v;}
-function itemTag(text,other=""){return el("span","tag "+other,text);}
-function newLink(label,url,kind){const a=el("a",kind,label);a.href=url;a.target="_blank";a.rel="noopener noreferrer";return a;}
-function showDetail(r){
-const root=$("detail");root.replaceChildren();
-if(!r){root.append(el("h2",null,"Sin coincidencias"),el("p","subtle","Prueba otros filtros para encontrar oportunidades."));return;}
-root.append(el("div","eyebrow",r.id+" · "+categoryOf[r.category]));
-root.append(el("h2",null,r.title));
-root.append(el("p","subtle",r.buyer+" · "+r.place));
-const ts=el("div");r.topics.forEach(t=>ts.append(itemTag(titleOf[t])));ts.append(itemTag(future(r)?"Plazo futuro*":"Plazo vencido",future(r)?"deadline":"expired"));root.append(ts);
-const fields=el("div","fields");
-for(const [label,value] of [["Cierre publicado (Chile)",fmtDate(r)],["Monto de referencia",fmtMoney(r)],["Publicación",r.published_at],["Tipo de contrato",categoryOf[r.category]]]){
- const box=el("div","fieldBox");box.append(el("small",null,label),el("strong",null,value));fields.append(box);
-}
-root.append(fields,el("h3",null,"Objeto de la licitación"),el("p",null,r.summary),el("h3",null,"Adecuación inicial a la búsqueda"),el("p",null,r.fit));
-const links=el("div","detailLinks");links.append(newLink("Abrir ficha oficial ↗",r.official_url,"primary"),newLink("Fuente de contraste ↗",r.source_url,""));root.append(links);
-root.append(el("div","note","Verificación: "+r.source_note+" No hay evaluación de admisibilidad, apertura efectiva, adjudicación ni lectura de bases originales. El enlace oficial puede requerir sesión o abrir solo en el portal."));
-}
-function findVisible(){
-const q=norm($("query").value.trim()),area=$("area").value,cat=$("category").value,deadline=$("deadline").value,before=$("before").value;
-return records.filter(r=>{
-if(q&&!norm([r.id,r.title,r.buyer,r.summary,r.fit,...r.topics].join(" ")).includes(q))return false;
-if(area&&!r.topics.includes(area))return false;
-if(cat&&((cat==="servicios"&&r.category==="suministro")||(cat!=="servicios"&&r.category!==cat)))return false;
-if(deadline==="future"&&!future(r))return false;if(deadline==="past"&&future(r))return false;
-if(before&&r.closing_at_chile.slice(0,10)>before)return false;
-return true;
-}).sort((a,b)=>Number(future(b))-Number(future(a))||a.closing_at_chile.localeCompare(b.closing_at_chile));
-}
-function render(){
-visible=findVisible();
-$("resultCount").textContent=visible.length+" de "+records.length+" oportunidades en esta muestra.";
-const root=$("results");root.replaceChildren();
-if(!visible.length){root.append(el("div","empty","Sin coincidencias para los filtros seleccionados."));showDetail(null);chosen="";return;}
-if(!visible.some(r=>r.id===chosen))chosen=visible[0].id;
-for(const r of visible){
- const b=el("button","item");b.type="button";b.dataset.id=r.id;b.setAttribute("aria-pressed",String(chosen===r.id));
- b.append(itemTag(r.id),itemTag(future(r)?"Plazo futuro*":"Vencido",future(r)?"deadline":"expired"));
- b.append(el("span","title",r.title),el("div","meta",r.buyer),el("div","meta","Cierre: "+fmtDate(r)+" · "+fmtMoney(r)));
- b.addEventListener("click",()=>{chosen=r.id;render();if(window.matchMedia("(max-width: 1120px)").matches)$("detail").scrollIntoView({behavior:"smooth",block:"start"});});
- root.append(b);
-}
-showDetail(visible.find(r=>r.id===chosen));
-}
-for(const id of ["query","area","category","deadline","before"])$(id).addEventListener("input",render);
-$("reset").addEventListener("click",()=>{for(const id of ["query","area","category","deadline","before"])$(id).value="";render();});
-function csvCell(v){const s=String(v??"");return '"'+s.replace(/"/g,'""')+'"';}
-$("export").addEventListener("click",()=>{
-const cols=["codigo","titulo","organismo","areas","naturaleza","publicacion","cierre_chile","plazo_futuro_segun_calendario","monto_estimado","moneda","url_oficial","fuente_contraste","fecha_corte","calidad"];
-const rows=visible.map(r=>[r.id,r.title,r.buyer,r.topics.join("|"),r.category,r.published_at,r.closing_at_chile,future(r)?"si_no_verificado":"no",r.amount,r.currency,r.official_url,r.source_url,config.as_of_chile,config.scope]);
-const csv=[cols,...rows].map(x=>x.map(csvCell).join(";")).join("\r\n");
-const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
-a.href=url;a.download="observatorio_oportunidades_muestra_2026-11-16.csv";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
-});
-$("allCount").textContent=records.length;
-$("futureCount").textContent=records.filter(future).length;
-$("serviceCount").textContent=records.filter(r=>r.category!=="suministro").length;
-render();
-</script></main></body></html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Observatorio de Compras Públicas: panorama temático, indicadores, licitaciones, órdenes de compra y fuentes oficiales. Muestra demostrativa verificable.">
+  <title>Observatorio de Compras Públicas | Panorama y exploración</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/catalog.js"></script>
+  <script defer src="assets/logic.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#panorama">Saltar al panorama del mercado</a>
+<header class="site-header">
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="Observatorio de Compras Públicas, inicio">
+        <span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Observatorio <small>Compras Públicas</small></span>
+      </a>
+      <nav class="topnav" aria-label="Navegación principal">
+        <a href="#ejemplos">Ejemplos</a><a href="#panorama">Panorama</a><a href="#explorar">Licitaciones</a>
+        <a href="https://github.com/germaquintana/mercadopublico/blob/main/README.md" target="_blank" rel="noopener noreferrer">Método</a>
+      </nav>
+    </div>
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Explorador del mercado · Versión demostrativa</div>
+        <h1>Del panorama general al detalle de cada compra.</h1>
+        <p>Elige un tema, comprende cómo se distribuyen los procesos y profundiza en las licitaciones, las órdenes de compra y sus fuentes.</p>
+        <form id="searchForm" role="search" class="search-form">
+          <label class="sr-only" for="globalSearch">Buscar por tema, código, organismo o palabra clave dentro de la muestra</label>
+          <span class="search-symbol" aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Buscar por tema, organismo o código…" autocomplete="off">
+          <button class="primary-button" type="submit">Explorar</button>
+        </form>
+        <p class="search-hint">Busca entre los registros cargados, no en todas las licitaciones nacionales. No requiere credenciales.</p>
+      </div>
+      <div class="hero-panel" aria-label="Cómo funciona el observatorio">
+        <div class="hero-overline">UN FLUJO DE CONSULTA</div>
+        <div class="hero-step"><span>01</span><div><strong>Elige un mercado</strong><small>Tres sectores de ejemplo y vista transversal</small></div></div>
+        <div class="hero-step"><span>02</span><div><strong>Lee los indicadores</strong><small>Actividad, montos, compradores y plazos</small></div></div>
+        <div class="hero-step"><span>03</span><div><strong>Abre un expediente</strong><small>Ficha pública, OC y antecedentes disponibles</small></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <section id="ejemplos" class="market-section" aria-labelledby="examplesTitle">
+    <div class="section-row">
+      <div><span class="section-kicker">01 / CONTEXTO</span><h2 id="examplesTitle">Elige un ejemplo de mercado</h2><p class="lead">Un mismo dashboard y un modelo de datos reutilizable para temas distintos.</p></div>
+      <div class="sample-flag" title="No constituye una búsqueda nacional en tiempo real"><span class="flag-circle" aria-hidden="true"></span> Muestra, no universo nacional</div>
+    </div>
+    <div class="market-grid" id="marketCards" aria-label="Sectores disponibles"></div>
+  </section>
+
+  <div class="notice" role="note" id="sourceNotice">
+    <span class="notice-icon" aria-hidden="true">i</span>
+    <div><strong>Datos de referencia · corte 16 de noviembre de 2026.</strong> Los indicadores se calculan sobre una muestra manual; no representan todas las compras del país. El plazo es estimado desde la fecha publicada, no el estado real de la convocatoria. Verifica vigencia y bases en Mercado Público.</div>
+  </div>
+
+  <section id="panorama" class="overview" aria-labelledby="overviewTitle">
+    <div class="section-row">
+      <div><span class="section-kicker">02 / ANÁLISIS</span><h2 id="overviewTitle">Panorama de <span id="marketTitle">la muestra</span></h2><p class="lead" id="marketIntro">Volumen y composición de los registros incluidos en el ejemplo seleccionado.</p></div>
+      <div class="header-aside"><span id="cutoffLabel">Corte de fuentes · 16 nov 2026</span><small id="scopeLabel">Cobertura: muestra seleccionada</small></div>
+    </div>
+    <div class="metric-grid" id="metrics" aria-label="Indicadores de la muestra"></div>
+    <div class="analytics-grid">
+      <article class="surface chart-panel">
+        <div class="panel-head"><div><span class="panel-eyebrow">COMPOSICIÓN</span><h3>¿Qué tipo de compra se solicita?</h3></div><span class="microtag" id="categoryMetric">—</span></div>
+        <p class="panel-helper">Selecciona una barra para filtrar las licitaciones.</p>
+        <div id="categoryChart" class="bar-list"></div>
+      </article>
+      <article class="surface chart-panel">
+        <div class="panel-head"><div><span class="panel-eyebrow">CALENDARIO</span><h3>¿Cuándo cierran los procesos?</h3></div><span class="microtag" id="timelineMetric">—</span></div>
+        <p class="panel-helper">Mes de cierre publicado. Las fechas pueden cambiar.</p>
+        <div id="monthChart" class="timeline"></div>
+      </article>
+      <article class="surface chart-panel">
+        <div class="panel-head"><div><span class="panel-eyebrow">COMPRADORES</span><h3>¿Qué organismos están comprando?</h3></div><span class="microtag" id="buyerMetric">—</span></div>
+        <p class="panel-helper">Procesos por comprador dentro de la muestra.</p>
+        <div id="buyerChart" class="buyer-list"></div>
+      </article>
+      <article class="surface chart-panel">
+        <div class="panel-head"><div><span class="panel-eyebrow">MONTOS Y CALIDAD</span><h3>¿Qué se puede cuantificar?</h3></div><span class="microtag" id="moneyMetric">—</span></div>
+        <p class="panel-helper">Los presupuestos, adjudicaciones y órdenes de compra nunca se mezclan.</p>
+        <div id="moneySummary" class="money-groups"></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="explorar" class="exploration" aria-labelledby="exploreTitle">
+    <div class="section-row">
+      <div><span class="section-kicker">03 / EXPLORACIÓN</span><h2 id="exploreTitle">Licitaciones y compras relacionadas</h2><p class="lead">Selecciona un proceso para abrir su ficha, examinar antecedentes y acceder a las fuentes.</p></div>
+      <div class="actions"><button type="button" class="secondary-button" id="clearFilters">Limpiar filtros</button><button type="button" class="primary-button export-button" id="exportCsv">Exportar selección CSV</button></div>
+    </div>
+    <div class="filter-row" aria-label="Filtros sobre la muestra">
+      <div class="filter-control"><label for="categoryFilter">Tipo de compra</label><select id="categoryFilter"><option value="">Todos los tipos</option></select></div>
+      <div class="filter-control"><label for="deadlineFilter">Calendario</label><select id="deadlineFilter"><option value="">Todos los plazos</option><option value="future">Cierre futuro*</option><option value="past">Plazo vencido</option><option value="unknown">Sin cierre confirmado</option></select></div>
+      <div class="filter-control"><label for="buyerFilter">Organismo</label><select id="buyerFilter"><option value="">Todos los organismos</option></select></div>
+    </div>
+    <div class="filter-feedback"><p id="resultsCount" role="status" aria-live="polite">Cargando muestra…</p><div id="activeFilters" class="active-filters" aria-live="polite"></div></div>
+    <div class="results-layout">
+      <div class="surface results-surface"><div class="results-head"><h3>Procesos de la muestra</h3><span class="results-sort">Cierres futuros primero</span></div><div id="resultsList" class="results-list" aria-label="Listado de licitaciones"></div></div>
+      <aside id="detailPanel" class="surface detail-surface" aria-label="Detalle de la licitación seleccionada">
+        <div class="empty-detail"><strong>Selecciona una licitación</strong><p>El detalle aparecerá aquí con sus fuentes y compras asociadas.</p></div>
+      </aside>
+    </div>
+    <p class="fineprint">* “Cierre futuro” compara el plazo registrado con el reloj, sin confirmar que la licitación esté abierta o que el calendario siga vigente. Las fichas y documentos originales deben verificarse en el portal oficial antes de tomar decisiones.</p>
+  </section>
+</main>
+<footer class="site-footer"><div class="container footer-inner">
+  <div><strong>Observatorio de Compras Públicas</strong><p>Prototipo abierto, sin afiliación institucional con ChileCompra. Fuente: registros públicos seleccionados y fichas indexadas. Datos originales no descargados.</p></div>
+  <div class="footer-links"><a href="https://www.mercadopublico.cl/" target="_blank" rel="noopener noreferrer">Mercado Público oficial</a><a href="https://github.com/germaquintana/mercadopublico" target="_blank" rel="noopener noreferrer">Código y metodología</a><a href="expediente-respel.html">Detalle histórico RESPEL</a></div>
+</div></footer>
+</body></html>
