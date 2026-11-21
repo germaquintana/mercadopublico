@@ -1,5 +1,14 @@
 # Observatorio de Compras Públicas — dashboard general v2
 
+## Primer piloto de flujo trazable — 21 de noviembre de 2026
+
+[**Abrir laboratorio interactivo**](piloto-flujo.html) · [Guía y QA del piloto](docs/PILOTO_FLUJO_TRAZABLE.md).
+
+El piloto complementa el dashboard general con una **unidad de trabajo reproducible**: filtrar los 16 procesos editoriales de cursos IA/tecnología/educación; seleccionar hasta tres, contrastar enlaces de fuentes, registrar revisión y notas manuales, generar una ficha Markdown y exportar/importar un JSON de continuidad. Se reutiliza el catálogo existente **sin alterar los registros**. Es una mejora de producto para explicar la metodología de continuidad y trazabilidad con un caso real de software.
+
+**Límites:** los registros son una selección editorial y no cobertura nacional; no hay consulta de API ni captura programada, ni copia de datos a Drive/GitHub desde el navegador. La autodeclaración de revisión humana no equivale a comprobación oficial. Las pruebas automáticas de modelo DOM se documentan en la guía; acceso HTTP al sitio GitHub Pages y navegador humano **pendientes de verificación independiente**. No se modificaron G2 por fecha, G3/G4/G5 ni el motor privado.
+
+
 **Última revisión de fuentes:** 16 de noviembre de 2026, Chile. **Versión:** 2.0, prototipo estático y reutilizable.  
 **Dirección de GitHub Pages:** https://germaquintana.github.io/mercadopublico/
 
