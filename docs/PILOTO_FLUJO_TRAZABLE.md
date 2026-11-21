@@ -37,3 +37,7 @@ Este es el primer **producto técnico demostrativo** del método de trabajo de l
 El público ve exclusivamente datos ya publicados en el catálogo editorial del Observatorio. Las cuestiones privadas del proyecto profesional se registran en su propio repositorio y Drive; no deben copiarse aquí. El motor de captura privado mercadopublico_busqueda **no fue intervenido**: su próxima acción MP-INT-24 y las puertas G2/G3/G4/G5 se mantienen intactas.
 
 **Próxima mejora recomendada:** probar el flujo con una persona supervisora, recoger incidencias de navegación y probar el sitio publicado HTTP. Después valorar el soporte de importación desde fuente autorizada para ampliar cobertura, sin activar procesos de captura no autorizados.
+
+### Prueba adicional de continuidad, 21-11-2026
+
+Se ejecutó una segunda simulación DOM usando la página ya guardada en GitHub (blob `430c5a3ee1943729229b3295178676953d7ea80e`): seleccionar 2 IDs; marcar un proceso como fuente abierta por la persona; introducir nota y pregunta; exportar JSON con esquema `piloto_mercado_v1`; retirar uno; importar el JSON y recuperar los 2 ID, nota, pregunta y estado; intentar importar `invalid-id` y comprobar rechazo sin perder la selección; copiar el informe al portapapeles simulado. **Resultado: todas las aserciones OK en DOM simulado; no reemplaza QA en navegador real.**
