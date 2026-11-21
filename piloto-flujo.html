@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Piloto de análisis trazable: compras públicas de capacitación, revisión de fuentes y ficha descargable sin API.">
+<title>Piloto de análisis trazable | Observatorio</title>
+<link rel="stylesheet" href="assets/styles.css">
+<script defer src="assets/formacion-demo-data.js"></script>
+<style>
+.pf-hero{background:linear-gradient(125deg,#102d40,#104c55);color:white;padding:0 0 46px}.pf-hero .topbar{margin-bottom:39px}.pf-over{font-size:11px;color:#b4e9dd;letter-spacing:.12em;font-weight:800}.pf-hero h1{font-size:clamp(35px,4.7vw,55px);letter-spacing:-.045em;line-height:1.1;max-width:820px;margin:12px 0 13px}.pf-hero h1 em{font-style:normal;color:#bee9db}.pf-hero p{max-width:830px;color:#d3e5e9;line-height:1.75;font-size:14px}.pf-sequence{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.pf-sequence span{border:1px solid #ffffff44;border-radius:20px;padding:7px 13px;font-size:11px;font-weight:750}.pf-main{padding:24px 0 48px}.pf-notice{border:1px solid #e7d5b7;background:#fff9ef;padding:15px 18px;border-radius:12px;color:#6a5638;font-size:12px;line-height:1.7;margin-bottom:25px}.pf-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.pf-card{background:#fff;border:1px solid #dce5e9;border-radius:16px;padding:24px;min-width:0;box-shadow:0 4px 18px #1a40500a}.pf-card h2{font-size:22px;line-height:1.25;margin:0 0 8px}.pf-card h3{font-size:14px;margin:0 0 10px}.pf-caption{font-size:12px;line-height:1.65;color:#617988;margin:0 0 20px}.pf-number{display:inline-block;color:#0d736d;background:#e7f4f0;padding:8px 11px;border-radius:10px;font-size:12px;font-weight:800;margin-bottom:13px}.pf-filters{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pf-card label{display:block;font-size:11px;color:#456471;font-weight:750;margin:11px 0 6px}.pf-card input[type=search],.pf-card select,.pf-card textarea{width:100%;border:1px solid #cadce2;border-radius:9px;padding:10px;font-size:12px;min-width:0;background:#fff;color:#16374b}.pf-card textarea{resize:vertical;min-height:66px}.pf-count{display:flex;justify-content:space-between;font-size:11px;color:#617784;font-weight:750;margin:22px 0 12px;gap:10px}.pf-list{display:flex;flex-direction:column;gap:8px;max-height:505px;overflow:auto}.pf-choice{display:grid;grid-template-columns:19px minmax(0,1fr);gap:9px;border:1px solid #dce8eb;border-radius:10px;padding:12px;background:#fbfdfd;cursor:pointer}.pf-choice.checked{border-color:#399d91;background:#f0faf6}.pf-choice input{margin-top:4px;accent-color:#087d76}.pf-choice strong{display:block;font-size:12px;line-height:1.5}.pf-choice small{display:block;color:#71818d;font-size:10px;margin-top:4px;line-height:1.6}.pf-code{color:#117b73!important;font-family:ui-monospace,monospace;font-weight:750}.pf-review{border:1px solid #e0e9ed;border-radius:11px;padding:13px;margin-bottom:11px}.pf-review h3{font-size:13px;line-height:1.4;margin:5px 0}.pf-review p{font-size:11px;color:#627887;line-height:1.6;margin:8px 0}.pf-source{display:flex;flex-wrap:wrap;gap:6px}.pf-source a{border:1px solid #c8e3df;background:#eef8f5;border-radius:7px;font-size:11px;font-weight:700;padding:6px 8px;text-decoration:none}.pf-empty{background:#f3f6f8;border-radius:9px;padding:19px;color:#748895;font-size:12px}.pf-output{margin-top:20px}.pf-result{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(210px,.75fr);gap:22px}.pf-pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f6f9fa;border:1px solid #d8e4e8;border-radius:9px;padding:17px;font-size:11px;line-height:1.7;max-height:480px;overflow:auto;min-height:180px;color:#24485b}.pf-buttons{display:flex;flex-direction:column;gap:9px}.pf-buttons button,.pf-upload{font-size:12px;font-weight:780;border:1px solid #b1cdcb;border-radius:8px;padding:11px;background:white;color:#166960;cursor:pointer;text-align:center}.pf-buttons button.primary{background:#087f77;border-color:#087f77;color:white}.pf-buttons button:disabled{opacity:.48;cursor:not-allowed}.pf-status{border-left:4px solid #168a7f;background:#eef8f4;padding:13px;font-size:12px;line-height:1.65;color:#245b56;margin:0 0 17px}.pf-foot{margin-top:23px;border-top:1px solid #dbe5e9;padding-top:18px;font-size:11px;line-height:1.7;color:#667c88}.pf-foot a{font-weight:750}@media(max-width:920px){.pf-grid,.pf-result{grid-template-columns:1fr}.pf-list{max-height:400px}}@media(max-width:600px){.pf-filters{grid-template-columns:1fr}.pf-card{padding:17px}.pf-hero h1{font-size:36px}.pf-hero .topbar{margin-bottom:24px}}
+</style>
+</head>
+<body>
+<a href="#seleccion" class="skip-link">Saltar al piloto</a>
+<header class="pf-hero"><div class="container"><div class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Observatorio<small>Compras Públicas</small></span></a><nav class="topnav"><a href="index.html?tema=formacion">Dashboard</a><a href="demo-capacitacion.html">Cursos IA</a><a href="consulta.html">Consulta libre</a></nav></div>
+<span class="pf-over">PILOTO FUNCIONAL · FLUJO DE ANÁLISIS Y CONTINUIDAD</span><h1>De compras públicas a una <em>ficha verificable</em>.</h1>
+<p>Selecciona licitaciones de capacitación, abre las fuentes, registra una revisión humana y exporta un informe junto a un archivo para reanudar la sesión. Demuestra la metodología sin conectar servicios sensibles.</p>
+<div class="pf-sequence"><span>01 Seleccionar</span><span>02 Contrastar</span><span>03 Documentar</span><span>04 Reanudar</span></div></div></header>
+<main class="container pf-main">
+<div class="pf-notice"><strong>Muestra editorial, no buscador en tiempo real.</strong> Se utilizan 16 procesos de capacitación seleccionados al 16-11-2026. No se comprueban estado vigente, bases, anexos ni enlaces mediante API. Las marcas de revisión son declaraciones de quien usa la página, no verificaciones automáticas. No ingreses información privada.</div>
+<div class="pf-grid">
+<section id="seleccion" class="pf-card"><span class="pf-number">01</span><h2>Seleccionar compras</h2><p class="pf-caption">Elige hasta tres expedientes para trabajar sobre un conjunto acotado y comparable.</p>
+<div class="pf-filters"><div><label for="pfQuery">Palabra, comprador o código</label><input id="pfQuery" type="search" placeholder="IA, curso, Power BI…"></div><div><label for="pfCategory">Área formativa</label><select id="pfCategory"><option value="">Todas</option></select></div></div>
+<div class="pf-count"><span id="pfVisible">—</span><span id="pfSelected">0 de 3 seleccionados</span></div><div id="pfList" class="pf-list"></div></section>
+<section class="pf-card"><span class="pf-number">02</span><h2>Revisar evidencias</h2><p class="pf-caption">Abre los enlaces oficiales o de contraste y deja constancia de lo revisado y lo que sigue pendiente.</p>
+<div id="pfReviews"><p class="pf-empty">Selecciona uno o varios procesos.</p></div><label for="pfQuestion">Pregunta del análisis o próxima decisión</label><textarea id="pfQuestion" maxlength="2000" placeholder="Ej.: identificar temáticas demandadas para formación continua"></textarea>
+</section>
+</div>
+<section class="pf-card pf-output"><span class="pf-number">03 / 04</span><h2>Exportar y reanudar</h2><p class="pf-caption">La ficha y el estado se generan en tu navegador. Descargar un archivo NO significa guardarlo automáticamente en Drive o GitHub.</p>
+<div id="pfStatus" class="pf-status" role="status">Sin procesos seleccionados.</div>
+<div class="pf-result"><div><h3>Vista previa de la ficha</h3><pre id="pfReport" class="pf-pre"></pre></div><div class="pf-buttons"><h3>Acciones del piloto</h3><button id="pfDownload" class="primary" type="button">Descargar ficha .md</button><button id="pfCopy" type="button">Copiar ficha</button><button id="pfExport" type="button">Exportar continuidad .json</button><label class="pf-upload" for="pfImport">Reabrir continuidad .json</label><input hidden id="pfImport" type="file" accept=".json,application/json"><p id="pfFeedback" class="pf-caption" role="status"></p><div class="pf-foot"><b>GitHub</b> conserva el código y las tareas de desarrollo. <b>Drive</b> puede recibir las fichas revisadas mediante guardado humano. No se usa API ni automatización en esta versión.</div></div></div>
+<div class="pf-foot"><a href="https://github.com/germaquintana/mercadopublico/blob/main/docs/PILOTO_FLUJO_TRAZABLE.md" target="_blank" rel="noopener noreferrer">Método y criterios QA</a> · <a href="https://www.mercadopublico.cl/" target="_blank" rel="noopener noreferrer">Verificación oficial en Mercado Público</a> · <a href="index.html">Volver al observatorio</a><p>Los montos con distinto tipo económico o IVA no se suman. El informe es un borrador local, sin certificación ni aval de ChileCompra.</p></div></section>
+</main>
+<script>
+window.addEventListener("DOMContentLoaded",function(){
+"use strict";
+var data=window.OBS_FORMACION_DEMO;
+var el=function(id){return document.getElementById(id);};
+if(!data||!Array.isArray(data.records)){el("pfStatus").textContent="Error: catálogo de formación no cargado.";return;}
+var all=data.records, ids=new Map(all.map(function(r){return [r.id,r];})), chosen=new Set(), reviews={}, query="",category="";
+var statusChoices={pendiente:"Pendiente de contrastar",fuente_consultada:"Fuente abierta manualmente (declaración)",requiere_revision:"Requiere revisión/corrección"};
+var labels=data.categories||{};
+var norm=function(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();};
+function node(tag,cls,value){var n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=String(value);return n;}
+function set(id,value){el(id).textContent=String(value);}
+function money(r){var a=r.amount;if(!a)return "No informado (no equivale a cero)";return new Intl.NumberFormat("es-CL",{style:"currency",currency:a.currency||"CLP",maximumFractionDigits:0}).format(Number(a.value))+" / "+(a.kind||"naturaleza sin especificar")+" / IVA: "+(a.tax||"sin verificar");}
+function selection(){return Array.from(chosen).map(function(k){return ids.get(k);}).filter(Boolean);}
+function rv(id){if(!reviews[id])reviews[id]={status:"pendiente",note:""};return reviews[id];}
+function feedback(s){set("pfFeedback",s);}
+function safeUrl(s){try{var u=new URL(s);return u.protocol==="https:"?u.href:null;}catch(e){return null;}}
+function showList(){
+ var root=el("pfList");root.replaceChildren();
+ var list=all.filter(function(r){return (!category||r.category===category)&&(!query||norm([r.id,r.title,r.buyer,r.description].concat(r.topics||[]).join(" ")).includes(norm(query)));});
+ set("pfVisible",list.length+" de "+all.length+" fichas");set("pfSelected",chosen.size+" de 3 seleccionados");
+ if(!list.length){root.append(node("p","pf-empty","No hay coincidencias en esta muestra."));return;}
+ list.forEach(function(r){
+  var wrap=node("label","pf-choice"+(chosen.has(r.id)?" checked":"")),check=node("input");check.type="checkbox";check.checked=chosen.has(r.id);
+  check.setAttribute("aria-label","Seleccionar "+r.id);
+  check.addEventListener("change",function(){
+   if(check.checked){if(chosen.size>=3){check.checked=false;feedback("El piloto admite máximo tres procesos.");return;}chosen.add(r.id);}else chosen.delete(r.id);
+   showList();showReviews();refresh();
+  });
+  var d=node("span");d.append(node("small","pf-code",r.id),node("strong",null,r.title),node("small",null,(labels[r.category]||r.category)+" · "+r.buyer));
+  wrap.append(check,d);root.append(wrap);
+ });
+}
+function showReviews(){
+ var root=el("pfReviews");root.replaceChildren();
+ if(!chosen.size){root.append(node("p","pf-empty","Selecciona uno o varios procesos."));return;}
+ selection().forEach(function(r){
+  var rev=rv(r.id),card=node("article","pf-review");
+  card.append(node("small","pf-code",r.id),node("h3",null,r.title),node("p",null,r.buyer+" · "+(labels[r.category]||r.category)),
+   node("p",null,"Cierre indexado: "+(r.closing_at||r.closing_date_known||"desconocido")+" · estado oficial actual no confirmado."),
+   node("p",null,"Monto: "+money(r)));
+  var sources=node("div","pf-source");
+  (r.sources||[]).forEach(function(s){var url=safeUrl(s.url);if(!url)return;var a=node("a",null,s.kind==="oficial"?"Ficha oficial ↗":"Contraste ↗");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.title=s.name||"Fuente";sources.append(a);});
+  card.append(sources);
+  var lab=node("label",null,"Resultado de revisión manual"),select=node("select");select.id="estado-"+r.id;lab.htmlFor=select.id;
+  Object.keys(statusChoices).forEach(function(key){var o=node("option",null,statusChoices[key]);o.value=key;select.append(o);});
+  select.value=rev.status;select.addEventListener("change",function(){rev.status=select.value;refresh();});
+  var ln=node("label",null,"Nota o siguiente acción"),txt=node("textarea");txt.id="nota-"+r.id;ln.htmlFor=txt.id;txt.value=rev.note;txt.maxLength=3000;
+  txt.addEventListener("input",function(){rev.note=txt.value.slice(0,3000);refresh();});
+  card.append(lab,select,ln,txt);root.append(card);
+ });
+}
+function report(){
+ var s=selection(),q=el("pfQuestion").value.trim(),out=[
+  "# Ficha de análisis trazable — Mercado Público",
+  "", "- Fecha de elaboración (Chile): "+new Intl.DateTimeFormat("es-CL",{timeZone:"America/Santiago",dateStyle:"medium",timeStyle:"short"}).format(new Date()),
+  "- Corte de fuente editorial: "+data.as_of_chile,
+  "- Alcance: "+s.length+" de "+all.length+" fichas de una muestra (no universo nacional).",
+  "- Pregunta: "+(q||"Sin especificar"),
+  "", "## Reglas y límites", "- No constituye búsqueda en tiempo real ni acredita estado abierto.",
+  "- Presupuesto, estimación, adjudicación, orden de compra y pago son conceptos distintos; no se suman montos.",
+  "- Sin descarga de bases ni anexos, ni comprobación automática de URLs, autenticación o firma de revisor.",
+  "- Los programas multicurso no imputan todo el presupuesto a IA.",
+  "", "## Procesos"];
+ if(!s.length)out.push("Selecciona hasta tres procesos para generar el informe.");
+ s.forEach(function(r,i){
+  var review=rv(r.id);
+  out.push("","### "+(i+1)+". "+r.id+" — "+r.title,
+   "- Comprador: "+r.buyer,
+   "- Categoría editorial: "+(labels[r.category]||r.category),
+   "- Tipo: "+r.type+" / modalidad "+r.modality,
+   "- Objeto: "+(r.description||"No informado"),
+   "- Fecha de cierre indexada: "+(r.closing_at||r.closing_date_known||"No informada"),
+   "- Estado reportado: "+(r.reported_status||"No confirmado"),
+   "- Monto: "+money(r),
+   "- Calidad: "+(r.source_quality||"No informada"),
+   "- Documentos: "+(r.document_status||"No examinados"),
+   "- Nota de fuente: "+(r.source_note||"Sin nota"),
+   "- Revisión humana declarada: "+(statusChoices[review.status]||statusChoices.pendiente),
+   "- Nota / próxima acción: "+(review.note||"Pendiente"),
+   "- Referencias:");
+  (r.sources||[]).forEach(function(x){var u=safeUrl(x.url);if(u)out.push("  - "+x.name+": "+u);});
+ });
+ out.push("","## Continuidad","- Próximo paso: cotejar las fuentes y bases oficiales, documentar diferencias y archivar esta ficha en un repositorio/carpeta autorizada.","- Estado: BORRADOR LOCAL; no validación institucional.","");
+ return out.join("\n");
+}
+function refresh(){
+ var s=selection(),n=s.filter(function(r){return rv(r.id).status!=="pendiente";}).length;
+ set("pfStatus",s.length?"Procesos: "+s.length+" · revisiones declaradas: "+n+" · pendientes: "+(s.length-n)+". La revisión no está verificada por este sistema.":"Sin procesos seleccionados. La ficha se habilita al elegir uno.");
+ set("pfReport",report());["pfDownload","pfCopy","pfExport"].forEach(function(id){el(id).disabled=!s.length;});
+}
+function download(name,contents,mime){
+ var blob=new Blob([contents],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
+}
+function snapshot(){
+ var state={schema:"piloto_mercado_v1",dataset:data.schema,selected_ids:Array.from(chosen),question:el("pfQuestion").value,reviews:{}};
+ chosen.forEach(function(id){state.reviews[id]=rv(id);});return state;
+}
+function restore(s){
+ if(!s||s.schema!=="piloto_mercado_v1"||!Array.isArray(s.selected_ids)||s.selected_ids.length>3)throw Error("Esquema no compatible o más de 3 registros.");
+ var next=s.selected_ids;
+ if(next.some(function(id){return typeof id!=="string"||!ids.has(id);})||new Set(next).size!==next.length)throw Error("Identificadores duplicados o inexistentes.");
+ chosen.clear();next.forEach(function(id){chosen.add(id);});
+ reviews={};
+ next.forEach(function(id){var a=s.reviews&&s.reviews[id]||{};reviews[id]={status:Object.prototype.hasOwnProperty.call(statusChoices,a.status)?a.status:"pendiente",note:String(a.note||"").slice(0,3000)};});
+ el("pfQuestion").value=String(s.question||"").slice(0,2000);
+ query="";category="";el("pfQuery").value="";el("pfCategory").value="";showList();showReviews();refresh();
+}
+Object.keys(labels).forEach(function(k){var o=node("option",null,labels[k]);o.value=k;el("pfCategory").append(o);});
+el("pfQuery").addEventListener("input",function(e){query=e.target.value;showList();});
+el("pfCategory").addEventListener("change",function(e){category=e.target.value;showList();});
+el("pfQuestion").addEventListener("input",refresh);
+el("pfDownload").addEventListener("click",function(){if(!chosen.size)return;download("ficha_mercado_publico_piloto.md",report(),"text/markdown;charset=utf-8");feedback("Ficha descargada localmente; revisar antes de compartir.");});
+el("pfExport").addEventListener("click",function(){if(!chosen.size)return;download("continuidad_mercado_publico_piloto.json",JSON.stringify(snapshot(),null,2),"application/json;charset=utf-8");feedback("Continuidad descargada. No se guardó automáticamente en GitHub ni Drive.");});
+el("pfCopy").addEventListener("click",async function(){if(!chosen.size)return;try{await navigator.clipboard.writeText(report());feedback("Ficha copiada.");}catch(e){feedback("No se pudo copiar; utiliza descarga .md.");}});
+el("pfImport").addEventListener("change",async function(e){
+ var f=e.target.files&&e.target.files[0];if(!f)return;
+ try{if(f.size>150000)throw Error("Máximo 150 kB.");restore(JSON.parse(await f.text()));feedback("Sesión importada. Revalida las fuentes antes de usarla.");}
+ catch(err){feedback("Importación rechazada: "+err.message);}
+ e.target.value="";
+});
+showList();showReviews();refresh();
+});
+</script>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>Observatorio de Compras Públicas · Piloto de análisis</strong><p>Demostrador estático independiente, sin afiliación oficial con ChileCompra. No envía datos al servidor.</p></div><div class="footer-links"><a href="index.html">Inicio</a><a href="demo-capacitacion.html">Maqueta formativa</a></div></div></footer>
+</body></html>
